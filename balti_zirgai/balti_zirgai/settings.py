@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ["balti-zirgai.local", "localhost"]
 
 INSTALLED_APPS = [
     'alynas',
-    'user-profile',
+    'user_profile',
+    'tinymce',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
