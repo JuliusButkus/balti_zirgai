@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% trans "beer detail"|capfirst %}{{ block.super }} {% endblock title %} 
+{% block content %}
+<h1> {% trans "beer describtion"|capfirst %}</h1>
+{% include "auksinis_ratas/inc/pager_next.html" %}
+    <ul class="beer_detail">
+        {% for beer in obj_list  %}
+            <li class="center">
+                {% if beer.cover %}
+                    <img class="service-cover" src="{{ beer.cover.url }}">
+                {% else %}
+                    <img class="regular-cover" src="{% static "img/regular.jpg" %}">
+                {% endif %}            
+            </li>
+            <h3>{{ beer.name }} </h3>
+            <li> {{ beer.detail }}$ </li>
+            <li> {% trans "price" |capfirst %}{{ beer.price }}$ </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

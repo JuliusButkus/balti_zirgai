@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% trans "beer available in White Knight bar"|upper %} {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{% trans "beer meniu"|capfirst %}</h1>
+{% if object_list %}
+    <table class="beer-meniu center">
+        <tr>
+            <th>{% trans "beer type"|capfirst %}</th>
+            <th>{% trans "beer name"|capfirst %}</th>
+            <th>{% trans "beer price"|capfirst %}</th>
+            <th>{% trans "available liters"|capfirst %}</th>
+        </tr>
+    {% for beer in object_list %}
+        <tr class="beer-meniu">
+            <td><a href= "{% url "type_detail" beer.pk %}">{{ beer.beer.type.name }}</a></td>
+            <td><a href= "{% url "beer_detail" beer.pk %}">{{ beer.beer.name }}</a></td>
+            <td>{{ beer.beer.price }}</td>
+            <td>{{ beer.beer.qty }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>{% trans "no beer available" %}</p>
+{% endif %}
+{% endblock content %}
