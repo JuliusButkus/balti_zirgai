@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "welcome to"|capfirst %} {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{% trans "Welcome to alynas" %}</h1>
+<p>{% trans "Currently in our alynas we have" %}:</p>
+<ul>
+    <li>{% trans "alus"|capfirst %}: {{ num_ }}</li>
+    <li>{% trans "alus"|capfirst %}: {{ num_ }}</li>
+    <li>{% trans "alus"|capfirst %}: {{ num_ }}</li>
+</ul>
+{% endblock content %}

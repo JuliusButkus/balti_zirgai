@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from . import models
+from django.http import HttpRequest
 
-# Create your views here.
+
+def index(request: HttpRequest):
+    num_visits = request.session.get('num_visits', 1)
+    request.session['num_visits'] = num_visits + 1
+    context = {
+        'num_visits': num_visits,
+    }
+    return render(request, 'library/index.html')
