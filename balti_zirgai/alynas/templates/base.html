@@ -13,10 +13,10 @@
         <ul class="nav">
             <li class="logo">alynas {% trans "alynas"|title %}</li>
             <li><a href="{% url "index" %}">{% trans "home"|title %}</a></li>
-            <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
-            <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
+            <li><a href="{% url "light_beer" %}">{% trans "alynas"|title %}</a></li>
+            <li><a href="{% url "dark_beer" %}">{% trans "alynas"|title %}</a></li>
             <li class="spacer"></li>
-            {% if user.is_authenticated %}
+            {% comment %} {% if user.is_authenticated %}
                 <li><a href="{% url "user_books" %}">{% trans "alynas"|title %}</a></li>
                 {% if user.is_superuser or user.is_staff %}
                 <li><a href="{% url "admin:index" %}">{% trans "admin"|title %}</a></li>
@@ -25,7 +25,7 @@
             {% else %}
                 <li><a href="{% url "index" %}">{% trans "login"|title %}</a></li>
                 <li><a href="{% url "index" %}">{% trans "sign Up"|title %}</a></li>
-            {% endif %}
+            {% endif %} {% endcomment %}
         </ul>
     </header>
     <main>

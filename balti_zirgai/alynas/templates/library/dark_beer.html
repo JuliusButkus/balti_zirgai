@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dark beers in {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>Dark Beers</h1>
+    <ul>
+        {% for beer in beers %}
+            <li>{{ beer.name }} - Qty: {{ beer.qty }} - Price: {{ beer.price }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
