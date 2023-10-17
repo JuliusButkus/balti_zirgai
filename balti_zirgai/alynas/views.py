@@ -14,7 +14,7 @@ def index(request: HttpRequest):
     context = {
         'num_visits': num_visits,
     }
-    return render(request, 'library/index.html', context)
+    return render(request, 'alynas/index.html', context)
 
 class BeerMeniu(generic.ListView):
     model = models.Beer

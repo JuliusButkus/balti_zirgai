@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}alynas {% trans "alynas"|title %}{% endblock title %}</title>
+    <title>{% block title %} {% trans "balti žirgai"|title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "css/base_style.css" %}">
     <style></style>
 </head>
 <body>
     <header>
         <ul class="nav">
-            <li class="logo">alynas {% trans "alynas"|title %}</li>
+            <li class="logo">{% trans "balti žirgai"|title %}</li>
             <li><a href="{% url "index" %}">{% trans "home"|title %}</a></li>
             <li><a href="{% url "beer_meniu" %}">{% trans "beer meniu"|title %}</a></li>
             <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
@@ -40,7 +40,7 @@
         {% endblock content %}
     </main>
     <footer>
-        <p>&copy; 2023 balti {% trans "zirgai"|title %}</p>
+        <p>&copy; 2023 Balti Žirgai</p>
     </footer>
 </body>
 </html>
