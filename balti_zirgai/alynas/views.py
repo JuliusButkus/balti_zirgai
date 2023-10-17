@@ -9,4 +9,4 @@ def index(request: HttpRequest):
     context = {
         'num_visits': num_visits,
     }
-    return render(request, 'library/index.html')
+    return render(request, 'library/index.html', context)
