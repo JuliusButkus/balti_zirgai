@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Sign up to {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>Sign up</h1>
+<form method="post" action="{{ request.path }}">
+    {% csrf_token %}
+    <p>
+        <label for="username">Username:</label>
+        <input id="username" type="text" name="username" value="{{ request.POST.username }}">
+    </p>
+    <p>
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" name="email" value="{{ request.POST.email }}">
+    </p>
+    <p>
+        <label for="password1">Password:</label>
+        <input id="password1" type="password" name="password1">
+    </p>
+    <p>
+        <label for="password2">Repeat Password:</label>
+        <input id="password2" type="password" name="password2">
+    </p>
+    <p><button type="submit">Confirm</button></p>
+</form>
+<p>Already have account? 
+    <a href="{% url "login" %}">Log in</a></p>
+{% endblock content %}

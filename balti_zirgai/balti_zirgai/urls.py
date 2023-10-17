@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('alynas.urls')),
     path('admin/', admin.site.urls),
     path('beers/', include('alynas.urls')),
+    path('user/', include('user_profile.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + (
     static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
