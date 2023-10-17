@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    min-width: 100vh;
 }
 main {
     flex-grow: 1;
@@ -46,4 +47,40 @@ h1, h2, h3 {
 }
 p {
     padding: 0 1rem;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: auto;
+    margin: 20px;
+}
+.left-image {
+    max-width: 110%;
+    order: -1;
+    width: 10%;
+    margin-right: 200px;
+}
+.right-image {
+    max-width: 110%;
+    order: 1;
+    width: 35%;
+    /* margin-right: -130px; */
+}
+.description {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    line-height: 1.6;
+    position: relative;
+}
+ul li.spacer {
+    flex-grow: 1
+}
+form p label {
+    min-width: 12rem;
+    display: inline-block;
 }

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block title %}{% trans "welcome to"|capfirst %} {{ block.super }}{% endblock title %}
+{% block content %}
+<body>
+    <div class="container">
+    <img src="{% static 'img/left.png' %}" alt="Left Image" class="side-image left-image">
+    <div class="description">
+        <center><h1>Balti Žirgai Brewery - Beer Page</h1></center>
+        <p>Welcome to Balti Žirgai Brewery - page dedicated to beer, spreading taste like a fairy tale and captivating like a painting.</p>
+        <p>Here, amid the notes of flavor and traces of aroma, we embark on a beer journey crafted not only by the green fields but also by every golden drop sliding in the glass.</p>
+        <p>Explore a world where beer is not just a taste but also tells a story. Balti Žirgai Brewery invites you to discover the mysterious world of various beer styles, where different aromas and flavors create a unique beer landscape.</p>
+        <p>Join us on our journey where brewing masters and beer artisans travel through paths of tradition and innovation, and you can be part of this flavorful adventure.</p>
+        <p>Welcome to Balti Žirgai Brewery - page, where the beer feast becomes not only a taste delight but also a cultural experience.</p>
+    </div>
+    <img src="{% static 'img/right.png' %}" alt="Right Image" class="side-image right-image">
+</div>
+</body>
+<p><h2>{% trans "Currently in our Balti Zirgai we have" %}:</p></h2>
+<ul>
+    <li>{% trans "total quantity in liters"|capfirst %}: {{ num_ }}</li>
+    <li>{% trans "different types of beer"|capfirst %}: {{ num_ }}</li>
+    <li>{% trans "your visits"|capfirst %}: {{ num_visits }}</li>
+</ul>
+{% endblock content %}
