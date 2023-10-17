@@ -18,7 +18,7 @@ def index(request: HttpRequest):
 
 class BeerMeniu(generic.ListView):
     model = models.Beer
-    template_name = "balti_zirgai/beer_meniu.html"
+    template_name = "library/beer_meniu.html"
     context_object_name = 'beer_meniu'
     paginate_by = 10
 
@@ -40,4 +40,4 @@ class BeerMeniu(generic.ListView):
 
 class BeerDetail(generic.ListView):
     model = models.Beer
-    template_name = "balti_zirgai/beer_detail.html"
+    template_name = "library/beer_detail.html"
