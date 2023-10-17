@@ -25,7 +25,7 @@ SECRET_KEY = local_settings.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = local_settings.DEBUG
 
-ALLOWED_HOSTS = ["balti-zirgai.local", "localhost"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
