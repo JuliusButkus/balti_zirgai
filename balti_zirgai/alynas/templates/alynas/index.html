@@ -4,7 +4,7 @@
 {% block content %}
 <body>
     <div class="container">
-    <img src="{% static 'img/left.png' %}" alt="Left Image" class="side-image left-image">
+    <a href="{% url 'light_beer'%}"><img src="{% static 'img/left.png' %}" alt="Left Image" class="side-image left-image"></a>
     <div class="description">
         <center><h1>Balti Žirgai Brewery - Beer Page</h1></center>
         <p>Welcome to Balti Žirgai Brewery - page dedicated to beer, spreading taste like a fairy tale and captivating like a painting.</p>
@@ -13,7 +13,7 @@
         <p>Join us on our journey where brewing masters and beer artisans travel through paths of tradition and innovation, and you can be part of this flavorful adventure.</p>
         <p>Welcome to Balti Žirgai Brewery - page, where the beer feast becomes not only a taste delight but also a cultural experience.</p>
     </div>
-    <img src="{% static 'img/right.png' %}" alt="Right Image" class="side-image right-image">
+    <a href="{% url 'dark_beer'%}"> <img src="{% static 'img/right.png' %}" alt="Right Image" class="side-image right-image"></a>
 </div>
 </body>
 <p><h2>{% trans "Currently in our Balti Zirgai we have" %}:</p></h2>
