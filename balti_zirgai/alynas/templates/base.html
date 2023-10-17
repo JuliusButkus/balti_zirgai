@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}alynas {% trans "alynas"|title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/base_style.css" %}">
+    <style></style>
+</head>
+<body>
+    <header>
+        <ul class="nav">
+            <li class="logo">alynas {% trans "alynas"|title %}</li>
+            <li><a href="{% url "index" %}">{% trans "home"|title %}</a></li>
+            <li><a href="{% url "" %}">{% trans "alynas"|title %}</a></li>
+            <li><a href="{% url "" %}">{% trans "alynas"|title %}</a></li>
+            <li class="spacer"></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url "user_books" %}">{% trans "alynas"|title %}</a></li>
+                {% if user.is_superuser or user.is_staff %}
+                <li><a href="{% url "admin:index" %}">{% trans "admin"|title %}</a></li>
+                {% endif %}
+                <li><a href="{% url "logout" %}">{% trans "logout"|title %}</a></li>
+            {% else %}
+                <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
+                <li><a href="{% url "signup" %}">{% trans "sign Up"|title %}</a></li>
+            {% endif %}
+        </ul>
+    </header>
+    <main>
+        {% if messages %}
+            {% for message in messages %}
+            <div class="box box-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <p>&copy; 2023 balti {% trans "zirgai"|title %}</p>
+    </footer>
+</body>
+</html>
