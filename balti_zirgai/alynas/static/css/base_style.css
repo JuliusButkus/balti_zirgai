@@ -76,3 +76,10 @@ p {
     line-height: 1.6;
     position: relative;
 }
+ul li.spacer {
+    flex-grow: 1
+}
+form p label {
+    min-width: 12rem;
+    display: inline-block;
+}
