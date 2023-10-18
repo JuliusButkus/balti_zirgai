@@ -64,7 +64,7 @@ class Order(models.Model):
     qty = models.IntegerField(blank=False)
     status = models.PositiveIntegerField(_("status"), choices=order_status, default=0)
     beer = models.ForeignKey(
-        Type, verbose_name=_('ordered beer'),
+        Beer, verbose_name=_('ordered beer'),
         on_delete=models.CASCADE,
         related_name="order"
     )
