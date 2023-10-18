@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 {% block title %}My Beer{% endblock title %}
 {% block content %}
-    <h1>My Purchased Beer</h1>
+    <h1>My Ordered Beers</h1>
     {% if purchases %}
-        <ul>
+        <table>
+            <tr>
+                <th>Beer Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
             {% for purchase in purchases %}
-                <li>{{ purchase.beer.name }} - {{ purchase.quantity }} - {{ purchase.total_price }}</li>
+                <tr>
+                    <td>{{ purchase.beer.name }}</td>
+                    <td>{{ purchase.quantity }}</td>
+                    <td>{{ purchase.total_price }}</td>
+                </tr>
             {% endfor %}
-        </ul>
+        </table>
+        <p>Total Price for All Beers: {{ total_price }}</p>
     {% else %}
         <p>No beers purchased yet.</p>
     {% endif %}
