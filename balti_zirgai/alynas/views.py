@@ -6,13 +6,17 @@ from django.db.models.query import QuerySet, Q
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from . import models
+from .models import Beer
+from django.db.models import Sum
 
 
 def index(request: HttpRequest):
     num_visits = request.session.get('num_visits', 1)
     request.session['num_visits'] = num_visits + 1
+    total_qty = Beer.objects.aggregate(Sum('qty'))['qty__sum'] or 0
     context = {
         'num_visits': num_visits,
+        'num_liters': total_qty,
     }
 
     return render(request, 'alynas/index.html', context)
