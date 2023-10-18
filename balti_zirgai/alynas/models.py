@@ -9,7 +9,7 @@ User = get_user_model()
 
 class Type(models.Model):
     name = models.CharField(max_length=20, unique=True)
-    detail = models.CharField(max_length=1000, blank=True)
+    detail = models.TextField(max_length=1000, blank=True)
     
     class Meta:
         verbose_name = _("type")
@@ -25,7 +25,7 @@ class Beer(models.Model):
     name = models.CharField(max_length=100, unique=True)
     qty = models.IntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    detail = models.CharField(max_length=1000, blank=True)
+    detail = models.TextField(max_length=1000, blank=True)
     beer_type = models.ForeignKey(
         Type, verbose_name=_('beer type'),
         on_delete=models.CASCADE,
