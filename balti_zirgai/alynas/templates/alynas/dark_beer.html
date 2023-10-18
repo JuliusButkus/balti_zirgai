@@ -2,9 +2,25 @@
 {% block title %}Dark beers in {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Dark Beers</h1>
-    <ul>
-        {% for beer in beers %}
-            <li><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a> - Qty: {{ beer.qty }} - Price: {{ beer.price }}</li>
-        {% endfor %}
-    </ul>
+<h4>Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer.</h4>
+<ul class="beers">
+    {% for beer in beers %}
+        <li><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a> - Qty: {{ beer.qty }} - Price: {{ beer.price }}</li>
+    {% endfor %}
+</ul>
+<div class="pager">
+    {% if page_obj.has_previous %}
+        <a href="?page=1">First</a>
+        {% if page_obj.previous_page_number != 1 %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+    {% endif %}
+    <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} </span>
+    {% if page_obj.has_next %}
+        {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+</div>
 {% endblock content %}

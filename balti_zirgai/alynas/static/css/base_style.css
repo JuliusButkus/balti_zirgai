@@ -1,6 +1,7 @@
 body {
     font-family: sans-serif; 
-    background-color: #CCCCCC; 
+    background-color: #CCCCCC;
+    background-image: url("{% static 'img/knight.png' %}"); 
     padding: 0; margin: 0;
     display: flex;
     flex-direction: column;
@@ -230,6 +231,28 @@ div.pager a {
 div.pager a:hover {
     background-color: #dddddd;
 }
+
+ul.beers {
+    list-style-type: none;
+    padding: 1rem;
+}
+ul.beers li{
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-family: Papyrus;
+}
+ul.beers li a{
+    text-decoration: none;
+    color: #333333;
+    font-family: Papyrus;
+}
+ul.beers li a:hover{
+    text-decoration: underline;
+    color: rgb(163, 163, 0);
+}
+h4 {
+    font-style: italic;
+    max-width: 50%;
 div.pager form {
     display: inline-block;
 }
