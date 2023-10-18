@@ -4,8 +4,11 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from tinymce.models import HTMLField
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 User = get_user_model()
+
 
 class Type(models.Model):
     name = models.CharField(max_length=20, unique=True)
@@ -79,7 +82,27 @@ class Order(models.Model):
 
 
 
+class Purchase(models.Model):
+    beer = models.ForeignKey(
+        Beer, verbose_name=_('purchased beer'),
+        on_delete=models.CASCADE,
+        related_name="purchase"
+    )
+    buyer = models.ForeignKey(
+        User, verbose_name=_("buyer"),
+        on_delete=models.CASCADE,
+        null=True, blank=True
+    )
+    quantity = models.PositiveIntegerField(default=1)
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    purchase_date = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = _("purchase")
+        verbose_name_plural = _("purchases")
+
+    def __str__(self):
+        return f'{self.buyer.username} - {self.beer.name} - {self.quantity}'
 
     
 

@@ -10,6 +10,7 @@
             <th>{% trans "name"|capfirst %}</th>
             <th>{% trans "price"|capfirst %}</th>
             <th>{% trans "available liters"|capfirst %}</th>
+            <th>{% trans "buy now"|capfirst %}</th> <!-- Add a new column header for the Buy Now button -->
         </tr>
     {% for beer in object_list %}
         <tr class="data-meniu">
@@ -17,6 +18,7 @@
             <td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td>
             <td>{{ beer.price }}$</td>
             <td>{{ beer.qty }}</td>
+            <td><a href="{% url 'buy_beer' beer.id %}">{% trans "Buy Now"|capfirst %}</a></td> <!-- Include the Buy Now button for each beer -->
         </tr>
     {% endfor %}
     </table>
