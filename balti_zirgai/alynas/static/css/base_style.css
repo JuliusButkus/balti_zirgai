@@ -230,3 +230,6 @@ div.pager a {
 div.pager a:hover {
     background-color: #dddddd;
 }
+div.pager form {
+    display: inline-block;
+}
