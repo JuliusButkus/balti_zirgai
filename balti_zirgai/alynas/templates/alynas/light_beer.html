@@ -1,13 +1,22 @@
 {% extends "base.html" %}
+{% load static i18n %}
 {% block title %}Light beers in {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Light beers</h1>
-<h4>Light beers are brewed using a meticulous process designed to reduce both color and caloric content. This typically involves using a larger percentage of pale malts and extended fermentation to achieve a crisp, refreshing taste. The result is a pale, clear beer with a subtle malt sweetness and a lower alcohol by volume, making it a perfect choice for those seeking a lighter, easy-drinking option, especially on warm days.</h3>
-<ul class="beers">
-    {% for beer in beers %}
-    <li><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a>  - Qty: {{ beer.qty }} - Price: {{ beer.price }}</li>
-    {% endfor %}
-</ul>
+<div style="width: 100%;">
+    <div style="float:left; width: 50%">
+        <h4>Light beers are brewed using a meticulous process designed to reduce both color and caloric content. This typically involves using a larger percentage of pale malts and extended fermentation to achieve a crisp, refreshing taste. The result is a pale, clear beer with a subtle malt sweetness and a lower alcohol by volume, making it a perfect choice for those seeking a lighter, easy-drinking option, especially on warm days.</h3>
+        <table class="beers">
+            <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
+            {% for beer in beers %}
+                <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div style="float:right;">
+        <a href="{% url 'dark_beer'%}"> <img src="{% static 'img/right.png' %}" alt="Right Image" class="side-image right-image"></a>
+    </div>
+<div style="clear:both"></div>
 <div class="pager">
     {% if page_obj.has_previous %}
         <a href="?page=1">First</a>
