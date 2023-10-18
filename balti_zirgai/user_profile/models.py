@@ -16,14 +16,14 @@ class Profile(models.Model):
         related_name="profile",
         null=True, blank=True
     )
-    photo = models.ImageField(("photo"), upload_to="user/profile/img/", null=True, blank=True)
+    photo = models.ImageField(verbose_name=_("photo"), upload_to="user/profile/img/", null=True, blank=True)
 
     class Meta:
         verbose_name =_("profile")
         verbose_name_plural =_("profiles")
 
-    def save(self, args, **kwargs) -> None:
-        super().save(args, **kwargs)
+    def save(self, *args, **kwargs) -> None:
+        super().save(*args, **kwargs)
         if self.photo:
             photo = Image.open(self.photo.path)
             if photo.height > 300 or photo.width > 500:

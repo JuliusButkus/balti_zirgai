@@ -18,15 +18,22 @@
             <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
             <li class="spacer"></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
+                <li>
+                    {% if user.profile.photo %}
+                        <a href="{% url "profile" %}"><img class="nav-profile-photo" src="{{ user.profile.photo.url }}" alt="User Profile Picture"></a>
+                    {% else %}
+                        <a href="{% url "profile" %}">{{ user.username }}</a>
+                    {% endif %}
+                </li>
                 {% if user.is_superuser or user.is_staff %}
                 <li><a href="{% url "admin:index" %}">{% trans "admin"|title %}</a></li>
                 {% endif %}
-                <li><a href="{% url "index" %}">{% trans "logout"|title %}</a></li>
+                <li><a href="{% url "logout" %}">{% trans "logout"|title %}&#127866;</a></li>
             {% else %}
-                <li><a href="{% url "index" %}">{% trans "login"|title %}</a></li>
-                <li><a href="{% url "index" %}">{% trans "sign Up"|title %}</a></li>
-            {% endif %} 
+                <li>Welcome, Drinker</li>
+                <li><a href="{% url "login" %}">{% trans "Login"|title %}</a></li>
+                <li><a href="{% url "signup" %}">{% trans "Sign Up"|title %}</a></li>
+            {% endif %}
         </ul>
     </header>
     <main>
