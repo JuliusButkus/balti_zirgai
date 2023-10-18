@@ -51,6 +51,31 @@ h1, h2, h3 {
 p {
     padding: 0 1rem;
 }
+
+div.description {
+    background-image: url(' /static/img/darkpapyrus.png');
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    max-width: 100%;
+    margin: 8px auto;
+    padding: 10px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    text-align: justify;
+    line-height: 1.6;
+    position: relative;
+    right: 35%;
+    margin-bottom: 20px
+
+}
+
+div.description h1 {
+    background-color: transparent; 
+    box-shadow: 0 3px 5px #00000033;
+    padding: 1rem;
+
+}
 .container {
     display: flex;
     max-width: 100%;
@@ -75,19 +100,6 @@ p {
     margin-top: 1rem;
 }
 
-.description {
-    max-width: 80%;
-    margin: 8px auto;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: justify;
-    line-height: 1.6;
-    position: relative;
-    right: 35%;
-    margin-bottom: 20px;
-}
 
 ul li.spacer {
     flex-grow: 1
