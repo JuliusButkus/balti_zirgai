@@ -1,0 +1,11 @@
+<div class="pager">
+    {% if page_obj.has_other_pages %}
+        {% for page in page_obj.paginator.page_range %}
+            {% if page != page_obj.number %}
+                <a href="{{ request.path }}?query={{ request.GET.query }}&page={{ page }}">{{ page }}</a>
+            {% else %}
+                <span class="current">{{ page }}</span>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>

@@ -4,7 +4,7 @@
 {% block content %}
 <h1> {% trans "beer describtion"|capfirst %}</h1>
     <ul class="beer_detail">
-        {% for beer in object_list  %}
+        {% comment %} {% for beer in object_list  %} {% endcomment %}
             <li class="center">
                 {% if beer.cover %}
                     <img class="beer-cover" src="{{ beer.cover.url }}">
@@ -15,6 +15,13 @@
             <h3>{{ beer.name }} </h3>
             <li> {{ beer.detail }}$ </li>
             <li> price {{ beer.price }}$ </li>
-    {% endfor %}
+            <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
+                {% csrf_token %}
+                <label for="quantity">Select Quantity:</label>
+                <input type="number" name="quantity" id="quantity" min="1" value="1">
+                <button type="submit" class="buy-button">Buy Now</button>
+            </form>
+        </div>
+    {% comment %} {% endfor %} {% endcomment %}
     </ul>
 {% endblock content %}

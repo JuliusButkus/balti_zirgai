@@ -231,6 +231,7 @@ div.pager a {
 div.pager a:hover {
     background-color: #dddddd;
 }
+
 ul.beers {
     list-style-type: none;
     padding: 1rem;
@@ -252,4 +253,6 @@ ul.beers li a:hover{
 h4 {
     font-style: italic;
     max-width: 50%;
+div.pager form {
+    display: inline-block;
 }

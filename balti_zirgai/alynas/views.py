@@ -10,6 +10,8 @@ from .models import Beer, Type
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views.generic import DetailView
+
 
 
 
@@ -65,25 +67,36 @@ class BeerMeniu(generic.ListView):
         return queryset
     
 
-class BeerDetail(generic.ListView):
-    model = models.Beer
+class BeerDetail(DetailView):
+    model = Beer
     template_name = "alynas/beer_detail.html"
+    context_object_name = 'beer'
+
+    def get_object(self, queryset=None):
+        return Beer.objects.get(name=self.kwargs['beer_name'])
+
 
 @login_required
 def buy_beer(request, beer_id):
     beer = get_object_or_404(models.Beer, pk=beer_id)
-    existing_purchase = models.Purchase.objects.filter(beer=beer, buyer=request.user).first()
-    if existing_purchase:
-        existing_purchase.quantity += 1
-        existing_purchase.total_price = existing_purchase.quantity * beer.price
-        existing_purchase.save()
-    else:
-        purchase = models.Purchase(beer=beer, buyer=request.user, quantity=1, total_price=beer.price)
-        purchase.save()
-    messages.success(request, 'Purchase successful!')
-    return redirect('beer_meniu')
+    if request.method == 'POST':
+        quantity = int(request.POST.get('quantity', 1))
+        total_price = beer.price * quantity
+        existing_purchase = models.Purchase.objects.filter(beer=beer, buyer=request.user).first()
+        if existing_purchase:
+            existing_purchase.quantity += quantity
+            existing_purchase.total_price += total_price
+            existing_purchase.save()
+        else:
+            purchase = models.Purchase(beer=beer, buyer=request.user, quantity=quantity, total_price=total_price)
+            purchase.save()
+        messages.success(request, f'Purchased {quantity} {beer.name}(s) successfully!')
+        return redirect('my_beer')
+    return render(request, 'alynas/beer_detail.html', {'object_list': [beer]})
+
 
 @login_required
 def my_beer(request):
     purchases = models.Purchase.objects.filter(buyer=request.user)
-    return render(request, 'alynas/my_beer.html', {'purchases': purchases})
+    total_price = sum(purchase.total_price for purchase in purchases)
+    return render(request, 'alynas/my_beer.html', {'purchases': purchases, 'total_price': total_price})
