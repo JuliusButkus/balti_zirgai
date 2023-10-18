@@ -3,11 +3,14 @@ from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest
 from django.db.models.query import QuerySet, Q
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from . import models
 from .models import Beer
 from django.db.models import Sum
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
 
 
 def index(request: HttpRequest):
@@ -24,7 +27,14 @@ def index(request: HttpRequest):
 def light_beer(request: HttpRequest):
     light_beer_type = models.Type.objects.get(name="Light")
     beers = models.Beer.objects.filter(beer_type=light_beer_type)
-    return render(request, 'alynas/light_beer.html', {'beers': beers})
+    paginate_by = 5
+    paginator = Paginator(beers, paginate_by)
+    page = request.GET.get('page')
+    try:
+        beers = paginator.get_page(page)
+    except EmptyPage:
+        beers = paginator.get_page(1)
+    return render(request, 'alynas/light_beer.html', {'beers': beers},)
 
 def dark_beer(request: HttpRequest):
     dark_beer_type = models.Type.objects.get(name="Dark")
@@ -56,3 +66,22 @@ class BeerMeniu(generic.ListView):
 class BeerDetail(generic.ListView):
     model = models.Beer
     template_name = "alynas/beer_detail.html"
+
+@login_required
+def buy_beer(request, beer_id):
+    beer = get_object_or_404(models.Beer, pk=beer_id)
+    existing_purchase = models.Purchase.objects.filter(beer=beer, buyer=request.user).first()
+    if existing_purchase:
+        existing_purchase.quantity += 1
+        existing_purchase.total_price = existing_purchase.quantity * beer.price
+        existing_purchase.save()
+    else:
+        purchase = models.Purchase(beer=beer, buyer=request.user, quantity=1, total_price=beer.price)
+        purchase.save()
+    messages.success(request, 'Purchase successful!')
+    return redirect('beer_meniu')
+
+@login_required
+def my_beer(request):
+    purchases = models.Purchase.objects.filter(buyer=request.user)
+    return render(request, 'alynas/my_beer.html', {'purchases': purchases})

@@ -2,6 +2,21 @@
 {% block title %}Light beers in {{ block.super }}{% endblock title %}
 {% block content %}
 <h1>Light beers</h1>
+    <div class="pager">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">First</a>
+            {% if page_obj.previous_page_number != 1 %}
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+        {% endif %}
+        <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} </span>
+        {% if page_obj.has_next %}
+            {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+            <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+    </div>
     <ul>
         {% for beer in beers %}
             <li><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a>  - Qty: {{ beer.qty }} - Price: {{ beer.price }}</li>
