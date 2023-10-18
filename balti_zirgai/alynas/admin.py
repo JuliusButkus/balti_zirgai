@@ -13,8 +13,12 @@ class BeerAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ("qty", "status", "date",)
-    list_filter = ("status", "qty",) 
+    list_display = ("drinker", "date",)
+    list_filter = ("drinker",) 
+
+class OrderLineAdmin(admin.ModelAdmin):
+    list_display = ("order", "beer_name", "qty", "price")
+    list_filter = ("order") 
 
 
 admin.site.register(models.Type, TypeAdmin)

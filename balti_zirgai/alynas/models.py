@@ -34,11 +34,7 @@ class Beer(models.Model):
         on_delete=models.CASCADE,
         related_name="beer"
         )
-    drinker = models.ForeignKey(
-        User, verbose_name=_("drinker"), 
-        on_delete=models.CASCADE,
-        null=True, blank=True
-        )
+    
     
     class Meta:
         verbose_name = _("beer")
@@ -61,13 +57,11 @@ order_status =(
 
 class Order(models.Model):
     date = models.DateTimeField(_("date"), auto_now=False, auto_now_add=True)
-    qty = models.IntegerField(blank=False)
-    status = models.PositiveIntegerField(_("status"), choices=order_status, default=0)
-    beer = models.ForeignKey(
-        Beer, verbose_name=_('ordered beer'),
+    drinker = models.ForeignKey(
+        User, verbose_name=_("drinker"), 
         on_delete=models.CASCADE,
-        related_name="order"
-    )
+        null=True, blank=True
+        )
     
 
     class Meta:
@@ -81,28 +75,31 @@ class Order(models.Model):
         return reverse("order_detail", kwargs={"pk": self.pk})
 
 
-
-class Purchase(models.Model):
+class OrderLine(models.Model):
+    qty = models.IntegerField(blank=False)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    status = models.PositiveIntegerField(_("status"), choices=order_status, default=0)
     beer = models.ForeignKey(
-        Beer, verbose_name=_('purchased beer'),
+        Beer, verbose_name=_('ordered beer'),
         on_delete=models.CASCADE,
-        related_name="purchase"
+        related_name="orderline"
     )
-    buyer = models.ForeignKey(
-        User, verbose_name=_("buyer"),
+    order = models.ForeignKey(
+        Order, verbose_name=_('order'),
         on_delete=models.CASCADE,
-        null=True, blank=True
+        related_name="orderline"
     )
-    quantity = models.PositiveIntegerField(default=1)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    purchase_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = _("purchase")
-        verbose_name_plural = _("purchases")
+        verbose_name = _("orderline")
+        verbose_name_plural = _("orderlines")
 
     def __str__(self):
-        return f'{self.buyer.username} - {self.beer.name} - {self.quantity}'
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("orderline_detail", kwargs={"pk": self.pk})
+
 
     
 
