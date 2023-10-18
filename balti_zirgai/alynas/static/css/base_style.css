@@ -231,28 +231,35 @@ div.pager a {
 div.pager a:hover {
     background-color: #dddddd;
 }
-
-ul.beers {
+table.beers {
     list-style-type: none;
-    padding: 1rem;
+    margin-left: 1.5rem;
 }
-ul.beers li{
+table.beers th{
+    padding: 0.8rem;
+    text-align: center;
+    font-style: italic;
+}
+table.beers td{
     margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
     color: #333333;
     font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
+    font-weight: 800;
 }
-ul.beers li a{
+table.beers td a{
     text-decoration: none;
     color: #333333;
     font-family: Papyrus;
 }
-ul.beers li a:hover{
+table.beers td a:hover{
     text-decoration: underline;
     color: rgb(163, 163, 0);
 }
 h4 {
     font-style: italic;
     max-width: 50%;
-div.pager form {
-    display: inline-block;
 }
