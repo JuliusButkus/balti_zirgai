@@ -20,7 +20,14 @@ def index(request: HttpRequest):
 def light_beer(request: HttpRequest):
     light_beer_type = models.Type.objects.get(name="Light")
     beers = models.Beer.objects.filter(beer_type=light_beer_type)
-    return render(request, 'alynas/light_beer.html', {'beers': beers})
+    paginate_by = 5
+    paginator = Paginator(beers, paginate_by)
+    page = request.GET.get('page')
+    try:
+        beers = paginator.get_page(page)
+    except EmptyPage:
+        beers = paginator.get_page(1)
+    return render(request, 'alynas/light_beer.html', {'beers': beers},)
 
 def dark_beer(request: HttpRequest):
     dark_beer_type = models.Type.objects.get(name="Dark")
