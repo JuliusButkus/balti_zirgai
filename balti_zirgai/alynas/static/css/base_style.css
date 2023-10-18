@@ -153,7 +153,7 @@ button {
 
 button:hover {
     background-color: #45a049;
-    /* transform: translateX(100%); */
+    transform: translateX(100%);
 }
 
 p {
