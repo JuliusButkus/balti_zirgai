@@ -50,33 +50,42 @@ p {
 }
 .container {
     display: flex;
-    justify-content: space-between;
-    max-width: auto;
+    max-width: 100%;
     margin: 20px;
+    position: relative;
 }
+
 .left-image {
-    max-width: 110%;
+    max-width: 100%;
     order: -1;
-    width: 10%;
-    margin-right: 200px;
+    width: 20%;
+    margin-left: 10rem;
+    margin-top: 45px;
 }
+
 .right-image {
-    max-width: 110%;
+    max-width: 100%;
     order: 1;
-    width: 35%;
-    /* margin-right: -130px; */
+    width: 40%;
+    right: -1rem;
+    position: absolute;
+    margin-top: 1rem;
 }
+
 .description {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 80%;
+    margin: 8px auto;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: justify;
     line-height: 1.6;
     position: relative;
+    right: 35%;
+    margin-bottom: 20px;
 }
+
 ul li.spacer {
     flex-grow: 1
 }
