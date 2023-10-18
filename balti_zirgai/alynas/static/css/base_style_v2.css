@@ -1,0 +1,267 @@
+/* base style */
+body {
+    font-family:Papyrus; 
+    background-color: #CCCCCC;
+    background-image: url('../media/img/darkpapyrus.png');
+    background-size: cover;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+main {
+    flex-grow: 1;
+}
+header, footer {
+    padding: 1rem 0;
+    margin: 0;
+}
+header {
+    background-color: #333333;
+    color: #afafaf;
+}
+footer {
+    background-color: #afafaf;
+}
+header a {
+    color: #d8d8d8;
+    text-decoration: none;
+}
+header a:hover {
+    color: #ffffff;
+}
+header ul.nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding: 0; margin: 0;
+}
+header ul.nav li {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+}
+h1, h2, h3 { 
+    border-bottom: 2px solid #FFCC00; 
+    box-shadow: 0 3px 5px #00000033;
+    padding: 1rem;
+    background-color: #d8d8d8;
+}
+p {
+    padding: 0 1rem;
+}
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: 20px;
+    position: relative;
+}
+
+.left-image {
+    max-width: 100%;
+    order: -1;
+    width: 20%;
+    margin-left: 10rem;
+    margin-top: 45px;
+}
+
+.right-image {
+    max-width: 100%;
+    order: 1;
+    width: 40%;
+    right: -1rem;
+    position: absolute;
+    margin-top: 1rem;
+}
+
+.description {
+    max-width: 80%;
+    margin: 8px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    line-height: 1.6;
+    position: relative;
+    right: 35%;
+    margin-bottom: 20px;
+}
+
+ul li.spacer {
+    flex-grow: 1
+}
+form p label {
+    min-width: 12rem;
+    display: inline-block;
+}
+
+/* Sign Up, Login Forms*/
+
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: rotate(-5deg);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transform: rotate(8deg)
+}
+
+button.update-btn {
+    width: 100px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button.update-btn:hover {
+    background-color: #45a049;
+    /* transform: translateX(0%); */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateX(100%);
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ a {
+    text-decoration: none;
+} 
+
+/* Top Navbar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    margin-right: 10px;
+}
+
+.nav .spacer {
+    flex: 1;
+}
+
+.nav .right-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav .right-links li {
+    margin-right: 10px;
+}
+
+/* Profile Picture Navigation Bar */
+.nav-profile-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Profile Picture */
+.profile-photo {
+    display: block;
+    margin: auto;
+    
+}
+/* pager css */
+div.pager {
+    margin: 0.5rem 1rem;
+}
+div.pager a {
+    border: 1px solid #ccaa77;
+    background-color: #d8d8d8;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+}
+div.pager a:hover {
+    background-color: #dddddd;
+}
+table.beers {
+    list-style-type: none;
+    margin-left: 1.5rem;
+}
+table.beers th{
+    padding: 0.8rem;
+    text-align: center;
+    font-style: italic;
+}
+table.beers td{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    color: #333333;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
+    font-weight: 800;
+}
+table.beers td a{
+    text-decoration: none;
+    color: #333333;
+    font-family: Papyrus;
+}
+table.beers td a:hover{
+    text-decoration: underline;
+    color: rgb(163, 163, 0);
+}
+h4 {
+    font-style: italic;
+    /* max-width: 50%; */
+}

@@ -16,10 +16,10 @@
     <a href="{% url 'dark_beer'%}"> <img src="{% static 'img/right.png' %}" alt="Right Image" class="side-image right-image"></a>
 </div>
 </body>
-<p><h2>{% trans "Currently in our Balti Zirgai we have" %}:</p></h2>
+<p><h2>{% trans "Currently in our White Knight we have" %}:</p></h2>
 <ul>
     <li>{% trans "total quantity in liters"|capfirst %}: {{ num_liters }}</li>
-    <li>{% trans "different types of beer"|capfirst %}: {{ num_types }}</li>
+    <li>{% trans "different taste of beer"|capfirst %}: {{ num_beer }}</li>
     <li>{% trans "your visits"|capfirst %}: {{ num_visits }}</li>
 </ul>
 {% endblock content %}

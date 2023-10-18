@@ -17,6 +17,13 @@
         {% endif %}
         <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
+    {% if search %}
+        <form method="GET" action="{{ request.path }}">
+            <input type="text" name="query" value="{{ request.GET.query }}" placeholder="search beer...">
+            <button type="submit">&#128269;</button>
+            <a href="{{ request.path }}">reset</a>
+        </form>
+    {% endif %}
 </div>
 {% if object_list %}
     <table class="beer-meniu center">

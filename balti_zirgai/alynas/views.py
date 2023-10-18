@@ -19,11 +19,11 @@ def index(request: HttpRequest):
     num_visits = request.session.get('num_visits', 1)
     request.session['num_visits'] = num_visits + 1
     total_qty = Beer.objects.aggregate(Sum('qty'))['qty__sum'] or 0
-    num_types = Type.objects.count()
+    num_beer = Beer.objects.count()
     context = {
         'num_visits': num_visits,
         'num_liters': total_qty,
-        'num_types': num_types,
+        'num_beer': num_beer,
     }
 
     return render(request, 'alynas/index.html', context)
@@ -61,8 +61,7 @@ class BeerMeniu(generic.ListView):
         query = self.request.GET.get("query")
         if query:
             queryset = queryset.filter(
-                Q(name__icontains=query) |
-                Q(name__istartswith=query)
+                Q(name__icontains=query)
                 )
         return queryset
     

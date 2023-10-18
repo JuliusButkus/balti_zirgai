@@ -5,19 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% trans "balti žirgai"|title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static "css/base_style.css" %}">
+    <link rel="stylesheet" href="{% static "css/base_style_v2.css" %}">
     <style></style>
 </head>
 <body>
     <header>
         <ul class="nav">
-            <li class="logo">{% trans "balti žirgai"|title %}</li>
-            <li><a href="{% url "index" %}">{% trans "home"|title %}</a></li>
-
+            <li class="logo"><a href="{% url "index" %}">{% trans "White Knight"|title %}</a></li>
             <li><a href="{% url "beer_meniu" %}">{% trans "beer meniu"|title %}</a></li>
-            <li><a href="{% url "index" %}">{% trans "alynas"|title %}</a></li>
-            <li><a href="{% url "my_beer" %}">{% trans "My Beer"|title %}</a></li>
             <li class="spacer"></li>
+            <li><a href="{% url "my_beer" %}">{% trans "My Beer"|title %}</a></li>
             {% if user.is_authenticated %}
                 <li>
                     {% if user.profile.photo %}
@@ -49,7 +46,7 @@
         {% endblock content %}
     </main>
     <footer>
-        <p>&copy; 2023 Balti Žirgai</p>
+        <p>&copy; 2023 White Knight</p>
     </footer>
 </body>
 </html>
