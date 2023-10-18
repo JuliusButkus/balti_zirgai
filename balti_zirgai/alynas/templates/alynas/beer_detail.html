@@ -4,7 +4,7 @@
 {% block content %}
 <h1> {% trans "beer describtion"|capfirst %}</h1>
     <ul class="beer_detail">
-        {% for beer in object_list  %}
+        {% comment %} {% for beer in object_list  %} {% endcomment %}
             <li class="center">
                 {% if beer.cover %}
                     <img class="beer-cover" src="{{ beer.cover.url }}">
@@ -15,6 +15,6 @@
             <h3>{{ beer.name }} </h3>
             <li> {{ beer.detail }}$ </li>
             <li> price {{ beer.price }}$ </li>
-    {% endfor %}
+    {% comment %} {% endfor %} {% endcomment %}
     </ul>
 {% endblock content %}

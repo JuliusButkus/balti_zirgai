@@ -10,6 +10,8 @@ from .models import Beer, Type
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views.generic import DetailView
+
 
 
 
@@ -65,9 +67,14 @@ class BeerMeniu(generic.ListView):
         return queryset
     
 
-class BeerDetail(generic.ListView):
-    model = models.Beer
+class BeerDetail(DetailView):
+    model = Beer
     template_name = "alynas/beer_detail.html"
+    context_object_name = 'beer'
+
+    def get_object(self, queryset=None):
+        return Beer.objects.get(name=self.kwargs['beer_name'])
+
 
 @login_required
 def buy_beer(request, beer_id):
