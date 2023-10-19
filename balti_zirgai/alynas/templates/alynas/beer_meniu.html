@@ -1,9 +1,9 @@
-{% extends "base.html" %}
 {% load static i18n %}
+{% extends "base.html" %}
 {% block title %}beer available in White Knight bar{{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{% trans "beer meniu"|capfirst %}</h1>
-<div class="pager">
+<h1 class="beer-meniu">{% trans "beer meniu"|capfirst %}</h1>
+<div class="pager center">
     {% if page_obj.has_previous %}
         <a href="?page=1">First</a>
         {% if page_obj.previous_page_number != 1 %}
@@ -18,7 +18,7 @@
         <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
     {% endif %}
     {% if search %}
-        <form method="GET" action="{{ request.path }}">
+        <form class="beer-search" method="GET" action="{{ request.path }}">
             <input type="text" name="query" value="{{ request.GET.query }}" placeholder="search beer...">
             <button type="submit">&#128269;</button>
             <a href="{{ request.path }}">reset</a>
@@ -34,7 +34,7 @@
             <th>{% trans "beer type"|capfirst %}</th>
         </tr>
     {% for beer in object_list %}
-        <tr class="data-meniu">
+        <tr class="data-meniu center" >
             <td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td>
             <td>{{ beer.price }}$</td>
             <td>{{ beer.qty }}</td>
@@ -45,4 +45,5 @@
 {% else %}
     <p>{% trans "no beer available" %}</p>
 {% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/beer_meniu.css' %}">
 {% endblock content %}
