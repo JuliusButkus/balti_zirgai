@@ -71,3 +71,4 @@ def signup(request: HttpRequest):
 def profile_view(request):
     user = request.user 
     return render(request, 'profile_template.html', {'user': user})
+

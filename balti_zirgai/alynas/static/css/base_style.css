@@ -97,7 +97,7 @@ form p label {
 
 /* Sign Up, Login Forms*/
 
-body {
+/* body {
     background-color: #f7f7f7;
     font-family: Arial, sans-serif;
 }
@@ -148,7 +148,7 @@ button.update-btn {
 
 button.update-btn:hover {
     background-color: #45a049;
-    /* transform: translateX(0%); */
+    transform: translateX(0%); 
 }
 
 button {
@@ -173,7 +173,7 @@ p {
 
  a {
     text-decoration: none;
-} 
+}  */
 
 /* Top Navbar */
 .nav {

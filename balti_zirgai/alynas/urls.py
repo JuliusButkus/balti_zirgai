@@ -9,4 +9,8 @@ urlpatterns = [
     path("beer/<str:beer_name>/", views.BeerDetail.as_view(), name="beer_detail"),
     path('buy-beer/<int:beer_id>/', views.buy_beer, name='buy_beer'),
     path('my-beer/', views.my_beer, name='my_beer'),
+    path('buy-beer/<int:beer_id>/', views.buy_beer, name='buy_beer'),
+    path('buy-all-beers/', views.buy_all_beers, name='buy_all_beers'),
+    path('my-orders/', views.my_orders, name='my_orders'),
+    path('order-detail/<int:pk>/', views.order_detail, name='order_detail'),
 ]

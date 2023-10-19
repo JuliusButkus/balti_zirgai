@@ -17,10 +17,11 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ("drinker",) 
 
 class OrderLineAdmin(admin.ModelAdmin):
-    list_display = ("order", "beer_name", "qty", "price")
-    list_filter = ("order") 
+    list_display = ('id', 'qty', 'price', 'status', 'beer')
+    list_filter = ('status', 'beer') 
 
 
 admin.site.register(models.Type, TypeAdmin)
 admin.site.register(models.Beer, BeerAdmin)
 admin.site.register(models.Order, OrderAdmin)
+admin.site.register(models.OrderLine, OrderLineAdmin)
