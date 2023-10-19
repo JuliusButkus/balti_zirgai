@@ -7,20 +7,24 @@
     <p>Status: {{ order.get_status_display }}</p>
 
     <h2>Ordered Beers:</h2>
-    <table>
-        <tr>
-            <th>Beer Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total Price</th>
-        </tr>
-        {% for order_line in order_lines %}
+    {% if order_lines %}
+        <table>
             <tr>
-                <td>{{ order_line.beer.name }}</td>
-                <td>{{ order_line.qty }}</td>
-                <td>{{ order_line.price }}</td>
-                <td>{{ order_line.total_price }}</td>
+                <th>Beer Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total Price</th>
             </tr>
-        {% endfor %}
-    </table>
+            {% for order_line in order_lines %}
+                <tr>
+                    <td>{{ order_line.beer.name }}</td>
+                    <td>{{ order_line.qty }}</td>
+                    <td>{{ order_line.price }}</td>
+                    <td>{{ order_line.total_price }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No orders have been made.</p>
+    {% endif %}
 {% endblock content %}

@@ -81,18 +81,23 @@ def buy_beer(request, beer_id):
     beer = get_object_or_404(models.Beer, pk=beer_id)
     if request.method == 'POST':
         quantity = int(request.POST.get('quantity', 1))
-        total_price = beer.price * quantity
-        existing_purchase = models.Purchase.objects.filter(beer=beer, buyer=request.user).first()
-        if existing_purchase:
-            existing_purchase.quantity += quantity
-            existing_purchase.total_price += total_price
-            existing_purchase.save()
+        if quantity > beer.qty:
+            messages.warning(request, f'Sorry, only {beer.qty} units of this beer are available.')
         else:
-            purchase = models.Purchase(beer=beer, buyer=request.user, quantity=quantity, total_price=total_price)
-            purchase.save()
-        messages.success(request, f'Added {quantity} {beer.name} successfully!')
+            total_price = beer.price * quantity
+            existing_purchase = models.Purchase.objects.filter(beer=beer, buyer=request.user).first()
+            if existing_purchase:
+                existing_purchase.quantity += quantity
+                existing_purchase.total_price += total_price
+                existing_purchase.save()
+            else:
+                purchase = models.Purchase(beer=beer, buyer=request.user, quantity=quantity, total_price=total_price)
+                purchase.save()
+            messages.success(request, f'Added {quantity} {beer.name} successfully!')
         return redirect('beer_meniu')
     return render(request, 'alynas/beer_detail.html', {'object_list': [beer]})
+
+
 
 
 @login_required
