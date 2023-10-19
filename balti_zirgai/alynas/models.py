@@ -62,7 +62,8 @@ class Order(models.Model):
         on_delete=models.CASCADE,
         null=True, blank=True
         )
-    
+    status = models.PositiveIntegerField(_("status"), choices=order_status, default=0)
+
 
     class Meta:
         verbose_name = _("order")
@@ -74,6 +75,13 @@ class Order(models.Model):
     def get_absolute_url(self):
         return reverse("order_detail", kwargs={"pk": self.pk})
 
+    def get_total_price(self):
+        order_lines = self.orderline_set.all()
+        total_price = sum(order_line.price for order_line in order_lines)
+        return total_price
+
+    def get_status_display(self):
+        return dict(order_status)[self.status]
 
 class OrderLine(models.Model):
     qty = models.IntegerField(blank=False)
@@ -87,7 +95,7 @@ class OrderLine(models.Model):
     order = models.ForeignKey(
         Order, verbose_name=_('order'),
         on_delete=models.CASCADE,
-        related_name="orderline"
+        related_name="orderline_set"
     )
 
     class Meta:
@@ -95,12 +103,16 @@ class OrderLine(models.Model):
         verbose_name_plural = _("orderlines")
 
     def __str__(self):
-        return self.name
+        return f'{self.beer.name}, {self.qty}, {self.get_status_display()}'
 
     def get_absolute_url(self):
         return reverse("orderline_detail", kwargs={"pk": self.pk})
 
-
+class Purchase(models.Model):
+    beer = models.ForeignKey(Beer, on_delete=models.CASCADE)
+    buyer = models.ForeignKey(User, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2)
     
 
 

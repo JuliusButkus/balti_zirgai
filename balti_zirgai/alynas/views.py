@@ -19,11 +19,11 @@ def index(request: HttpRequest):
     num_visits = request.session.get('num_visits', 1)
     request.session['num_visits'] = num_visits + 1
     total_qty = Beer.objects.aggregate(Sum('qty'))['qty__sum'] or 0
-    num_beer = Beer.objects.count()
+    num_types = Type.objects.count()
     context = {
         'num_visits': num_visits,
         'num_liters': total_qty,
-        'num_beer': num_beer,
+        'num_types': num_types,
     }
 
     return render(request, 'alynas/index.html', context)
@@ -61,7 +61,8 @@ class BeerMeniu(generic.ListView):
         query = self.request.GET.get("query")
         if query:
             queryset = queryset.filter(
-                Q(name__icontains=query)
+                Q(name__icontains=query) |
+                Q(name__istartswith=query)
                 )
         return queryset
     
@@ -89,9 +90,38 @@ def buy_beer(request, beer_id):
         else:
             purchase = models.Purchase(beer=beer, buyer=request.user, quantity=quantity, total_price=total_price)
             purchase.save()
-        messages.success(request, f'Purchased {quantity} {beer.name}(s) successfully!')
-        return redirect('my_beer')
+        messages.success(request, f'Added {quantity} {beer.name} successfully!')
+        return redirect('beer_meniu')
     return render(request, 'alynas/beer_detail.html', {'object_list': [beer]})
+
+
+@login_required
+def buy_all_beers(request):
+    purchases = models.Purchase.objects.filter(buyer=request.user)
+    total_price = sum(purchase.total_price for purchase in purchases)
+
+    order = models.Order.objects.create(drinker=request.user)
+
+    for purchase in purchases:
+        beer = purchase.beer
+        quantity = purchase.quantity
+        price = purchase.total_price
+
+        order_line = models.OrderLine.objects.create(
+            qty=quantity,
+            price=price,
+            status=1,
+            beer=beer,
+            order=order,
+        )
+
+        beer.qty -= quantity
+        beer.save()
+
+        purchase.delete()
+
+    messages.success(request, f'Purchased all beers successfully for a total price of {total_price}!')
+    return redirect('my_orders')
 
 
 @login_required
@@ -99,3 +129,24 @@ def my_beer(request):
     purchases = models.Purchase.objects.filter(buyer=request.user)
     total_price = sum(purchase.total_price for purchase in purchases)
     return render(request, 'alynas/my_beer.html', {'purchases': purchases, 'total_price': total_price})
+
+@login_required
+def my_orders(request):
+    user_orders = models.Order.objects.filter(drinker=request.user)
+    order_data = []
+    for order in user_orders:
+        order_lines = order.orderline_set.all()
+        total_price = sum(item.qty * item.price for item in order_lines)
+        order_data.append({
+            'order': order,
+            'order_lines': order_lines,
+            'total_price': total_price
+        })
+    return render(request, 'alynas/my_orders.html', {'order_data': order_data})
+
+def order_detail(request, pk):
+    order = get_object_or_404(models.Order, pk=pk)
+    order_lines = models.OrderLine.objects.filter(order=order)
+    for order_line in order_lines:
+        order_line.total_price = order_line.qty * order_line.price
+    return render(request, 'alynas/order_detail.html', {'order': order, 'order_lines': order_lines})
