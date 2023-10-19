@@ -91,7 +91,7 @@ div.description h1 {
     display: flex;
     max-width: 100%;
     margin: 20px;
-    position: relative;
+    position: absolute;
 }
 
 .left-image {
@@ -107,6 +107,7 @@ div.description h1 {
     right: -1rem;
     position: absolute;
     margin-top: 10%;
+    
 }
 
 /**/

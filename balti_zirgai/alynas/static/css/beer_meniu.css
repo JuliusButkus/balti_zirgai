@@ -4,11 +4,18 @@ h1.beer-meniu {
     box-shadow: none;
     border: none;
 }
-div.pager {
-    orientation: center;
+div.beer-meniu {
+    position: flex;
     min-width: 100vh;
-    display: inline-block;
-    margin: 0.5rem 1rem;
+    min-height: 100vh;
+}
+div.pager {
+    position: absolute;
+    width: 50%;
+    top: auto;
+    left: 50%;
+    padding: 10px;
+    border: solid 5px;
 }
 div.pager a {
     text-align: center;
@@ -23,8 +30,6 @@ div.pager a:hover {
 form.beer-search {
     margin: 0 auto;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 form.beer-search label {
     display: inline-block;
@@ -49,6 +54,17 @@ div.pager button:hover {
     background-color: #5045a0;
     transform: none;
 }
+
+div.table {
+    position: relative;
+    width: 100vh;
+    top: auto;
+    left: 50%;
+    /* transform: translate(-10%, -50%); */
+    padding: 10px;
+    border: solid 5px;
+}
+
 table.beer-meniu {
     orientation: landscape;
     orientation: center;
