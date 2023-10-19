@@ -51,17 +51,18 @@ h1, h2, h3 {
 p {
     padding: 0 1rem;
 }
-
+/* index Css */
 div.description {
     background-image: url(' /static/img/darkpapyrus.png');
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: 100%;
     background-position: center;
     background-color: transparent;
     max-width: 100%;
     margin: 8px auto;
     padding: 10px;
     border-radius: 10px;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
     text-align: justify;
     line-height: 1.6;
     position: relative;
