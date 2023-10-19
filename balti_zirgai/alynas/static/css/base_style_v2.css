@@ -57,33 +57,38 @@ body {
     margin: 0;
     padding: 0;
 }
-.image-container {
+/* .image-container {
     display: flex;
     justify-content: center;
     align-items: center; 
     /*max-width: 100%; 
     max-height: 100%;*/
-    margin-right: 10%;
-}
+    /* margin-right: 10%; */
+/* }
+
 #left img {
     width: 300px;
 }
-#bg img {
+ */
+
+/* #bg img {
     width: 800px;
     margin-left: 25%;
-.container {
+} */ 
+
+/* .container {
     display: flex;
     max-width: 100%;
     margin: 20px;
     position: absolute;
-}
-#right img {
+} */
+/* #right img {
     width: 400px;
     margin-left: 40%;
 }
 .image {
     margin: 0 10px;
-
+}
 .right-image {
     max-width: 100%;
     order: 1;
@@ -91,8 +96,8 @@ body {
     right: -1rem;
     position: absolute;
     margin-top: 10%;
-    
-}
+ 
+} */
 
 .description {
     position: relative;
@@ -146,7 +151,7 @@ input[type="password"] {
     /* transform: rotate(8deg) */
 }
 
-button.update-btn {
+/* button.update-btn {
     width: 100px;
     padding: 10px;
     background-color: #4CAF50;
@@ -160,7 +165,7 @@ button.update-btn {
 button.update-btn:hover {
     background-color: #45a049;
     /* transform: translateX(0%); */
-}
+/* } */
 
 button {
     width: 100%;
@@ -170,7 +175,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
+} */
 
 /* button:hover {
     background-color: #45a049;
@@ -228,50 +233,6 @@ p {
     display: block;
     margin: auto;
     
-}
-/* pager css */
-div.pager {
-    margin: 0.5rem 1rem;
-}
-div.pager a {
-    border: 1px solid #ccaa77;
-    background-color: #d8d8d8;
-    border-radius: 0.25rem;
-    padding: 0.25rem;
-}
-div.pager a:hover {
-    background-color: #dddddd;
-}
-/* table beers */
-table.beers {
-    margin-left: auto;
-    margin-right: auto;
-
-}
-table.beers th{
-    padding: 0.8rem;
-    text-align: center;
-    font-style: italic;
-    
-}
-table.beers td{
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
-    color: #333333;
-    font-family: Papyrus;
-    font-style: italic;
-    font-size: large;
-    font-weight: 800;
-}
-table.beers td a{
-    text-decoration: none;
-    color: #333333;
-    font-family: Papyrus;
-}
-table.beers td a:hover{
-    text-decoration: underline;
-    color: rgb(163, 163, 0);
 }
 h4 {
     font-style: italic;
