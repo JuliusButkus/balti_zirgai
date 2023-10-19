@@ -18,6 +18,10 @@
             {% endfor %}
         </table>
         <p>Total Price for All Beers: {{ total_price }}</p>
+        <form method="post" action="{% url 'buy_all_beers' %}">
+            {% csrf_token %}
+            <button type="submit">Buy All</button>
+        </form>
     {% else %}
         <p>No beers purchased yet.</p>
     {% endif %}

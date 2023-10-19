@@ -2,26 +2,29 @@
 {% load static %}
 {% block title %}{{ user }}profile at {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{{ user }} profile</h1>
-{% if user.profile.photo %}
-    <img class="profile-photo" src="{{ user.profile.photo.url }}">
-{% else %}
-    <img src="{% static "/img/no_pic.jpg" %}">
-{% endif %}
-{% if user.first_name %}
-    <p>First Name: {{ user.first_name }}</p>
-{% else %}
-    <p>First Name is not available.</p>
-{% endif %}
-{% if user.last_name %}
-    <p>Last Name: {{ user.last_name }}</p>
-{% else %}
-    <p>Last Name is not available.</p>
-{% endif %}
-<p>Email: {{ user.email }}</p>
-<p>
-    <button class="update-btn">
-        <a href="{% url "profile_update" %}" class="btn" style="color: white; text-decoration: none;">Update</a>
-    </button>
-</p>
+    <h1>{{ user }} profile</h1>
+    {% if user.profile.photo %}
+        <img class="profile-photo" src="{{ user.profile.photo.url }}">
+    {% else %}
+        <img src="{% static "/img/no_pic.jpg" %}">
+    {% endif %}
+    {% if user.first_name %}
+        <p>First Name: {{ user.first_name }}</p>
+    {% else %}
+        <p>First Name is not available.</p>
+    {% endif %}
+    {% if user.last_name %}
+        <p>Last Name: {{ user.last_name }}</p>
+    {% else %}
+        <p>Last Name is not available.</p>
+    {% endif %}
+    <p>Email: {{ user.email }}</p>
+    <p>
+        <button class="update-btn">
+            <a href="{% url "profile_update" %}" class="btn" style="color: white; text-decoration: none;">Update</a>
+        </button>
+        <button class="my-orders-btn">
+            <a href="{% url "my_orders" %}" class="btn" style="color: white; text-decoration: none;">My Orders</a>
+        </button>
+    </p>
 {% endblock content %}

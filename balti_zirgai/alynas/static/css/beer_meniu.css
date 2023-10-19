@@ -1,0 +1,97 @@
+h1.beer-meniu {
+    text-align: center;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+div.beer-meniu {
+    position: flex;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+div.pager {
+    position: absolute;
+    width: 50%;
+    top: auto;
+    left: 50%;
+    padding: 10px;
+    border: solid 5px;
+}
+div.pager a {
+    text-align: center;
+    border: 1px solid #ccaa77;
+    background-color: #d8d8d8;
+    border-radius: 0.25rem;
+    padding: 0.25rem;;
+}
+div.pager a:hover {
+    background-color: #dddddd;
+}
+form.beer-search {
+    margin: 0 auto;
+    padding: 20px;
+}
+form.beer-search label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+div.pager input {
+    width: 30%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+div.pager button {
+    width: 5%;
+    padding: 10px;
+    background-color: #582f7e73;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+div.pager button:hover {
+    background-color: #5045a0;
+    transform: none;
+}
+
+div.table {
+    position: relative;
+    width: 100vh;
+    top: auto;
+    left: 50%;
+    /* transform: translate(-10%, -50%); */
+    padding: 10px;
+    border: solid 5px;
+}
+
+table.beer-meniu {
+    orientation: landscape;
+    orientation: center;
+    list-style-type: none;
+    margin-left: 1.5rem;
+}
+table.beer-meniu th{
+    padding: 0.8rem;
+    text-align: center;
+    font-style: italic;
+}
+table.beer-meniu td{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    color: #333333;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
+    font-weight: 800;
+}
+table.beer-meniu td a{
+    text-decoration: none;
+    color: #333333;
+    font-family: Papyrus;
+}
+table.beer-meniu td a:hover{
+    text-decoration: underline;
+    color: rgb(163, 163, 0);
+}
