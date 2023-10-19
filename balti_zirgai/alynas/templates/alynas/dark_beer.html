@@ -6,16 +6,19 @@
 <div style="width: 100%;">
     <div style="float:left; width: 50%">
         <h4>Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer.</h4>
-        <table class="beers">
-            <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
-            {% for beer in beers %}
-                <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
-            {% endfor %}
-        </table>
+        <div class="beer">
+            <table class="beers";>
+                <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
+                {% for beer in beers %}
+                    <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
     <div style="float:right;" >
-        <a href="{% url 'light_beer'%}"><img src="{% static 'img/left.png' %}" alt="Left Image" class="side-image right-image" style="width: 14%; margin-right: 15rem"></a>
+        <a href="{% url 'light_beer'%}"><img src="{% static 'img/left.png' %}" alt="Left Image" class="side-image right-image" style="width: 14%; margin-right: 15%"></a>
     </div>
+</div>
 <div style="clear:both"></div>
 <div class="pager">
     {% if page_obj.has_previous %}

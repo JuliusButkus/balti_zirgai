@@ -241,7 +241,60 @@ p {
     margin: auto;
     
 }
+/* pager css */
+div.pager {
+    margin: 0.5rem 1rem;
+}
+div.pager a {
+    border: 1px solid #ccaa77;
+    background-color: #d8d8d8;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+}
+div.pager a:hover {
+    background-color: #dddddd;
+}
+/* table beers */
+table.beers {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+table.beers th{
+    padding: 0.8rem;
+    text-align: center;
+    font-style: italic;
+    
+}
+table.beers td{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    color: #333333;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
+    font-weight: 800;
+}
+table.beers td a{
+    text-decoration: none;
+    color: #333333;
+    font-family: Papyrus;
+}
+table.beers td a:hover{
+    text-decoration: underline;
+    color: rgb(163, 163, 0);
+}
 h4 {
     font-style: italic;
-    /* max-width: 50%; */
+    margin-left: 2rem;
+}
+div.beer {
+    display: flex;
+    background-image: url('/static/img/darkpapyrus.png');
+    background-size: 60% 100%;
+    background-repeat:no-repeat;
+    background-position:center center;
+    border-collapse: collapse;
+    
 }
