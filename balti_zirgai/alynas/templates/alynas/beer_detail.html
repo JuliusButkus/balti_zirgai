@@ -2,26 +2,32 @@
 {% load static i18n %}
 {% block title %}"beer detail"{{ block.super }} {% endblock title %} 
 {% block content %}
-<h1> {% trans "beer describtion"|capfirst %}</h1>
-    <ul class="beer_detail">
-        {% comment %} {% for beer in object_list  %} {% endcomment %}
-            <li class="center">
-                {% if beer.cover %}
-                    <img class="beer-cover" src="{{ beer.cover.url }}">
-                {% else %}
-                    <img class="regular-cover" src="{% static "img/regular.jpg" %}">
-                {% endif %}            
-            </li>
-            <h3>{{ beer.name }} </h3>
-            <li> {{ beer.detail }}$ </li>
-            <li> price {{ beer.price }}$ </li>
-            <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
-                {% csrf_token %}
-                <label for="quantity">Select Quantity:</label>
-                <input type="number" name="quantity" id="quantity" min="1" value="1">
-                <button type="submit" class="buy-button">Add</button>
-            </form>
-        </div>
-    {% comment %} {% endfor %} {% endcomment %}
-    </ul>
+<div class="container">
+    <div class="background center">
+        <div class="content center">
+            <div class="main-content">
+                <h1> {% trans "beer describtion"|capfirst %}</h1>
+                <ul class="beer_detail">
+                    <li class="center">
+                        {% if beer.cover %}
+                            <img class="beer-cover" src="{{ beer.cover.url }}">
+                        {% else %}
+                            <img class="regular-cover" src="{% static "img/regular.jpg" %}">
+                        {% endif %}            
+                    </li>
+                    <h3>{{ beer.name }} </h3>
+                    <li> {{ beer.detail }}$ </li>
+                    <li> price {{ beer.price }}$ </li>
+                    <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
+                        {% csrf_token %}
+                        <label for="quantity">Select Quantity:</label>
+                        <input type="number" name="quantity" id="quantity" min="1" value="1">
+                        <button type="submit" class="buy-button">Add</button>
+                    </form>
+                </ul>
+            </div>
+        </div>        
+    </div> 
+</div> 
+<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">   
 {% endblock content %}
