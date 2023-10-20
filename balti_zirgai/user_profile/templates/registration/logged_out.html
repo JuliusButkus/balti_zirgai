@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Logged out from {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Logged out</h1>
-<p>You are logged out</p>
-<p><a href="{% url "login" %}">Log In</a></p>
+<div class="form-container">
+    <div class="form-background center">
+        <div class="form-content center">
+            <div class="form-main-content center">
+            <h1>Logged out</h1>
+            <p>You are logged out</p>
+            <p><a href="{% url "login" %}">Log In</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

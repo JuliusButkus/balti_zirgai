@@ -3,8 +3,9 @@
 {% block title %}{{ user }}profile at {{ block.super }}{% endblock title %}
 {% block content %}
 <div class="form-container">
-    <div class="form-background">
-        <div class="form-content">
+    <div class="form-background center">
+        <div class="form-content center">
+            <div class="form-main-content center">
             <h1>{{ user }} profile</h1>
             {% if user.profile.photo %}
                 <img class="profile-photo" src="{{ user.profile.photo.url }}">
@@ -27,6 +28,7 @@
                     <a href="{% url "profile_update" %}" class="btn" style="color: white; text-decoration: none;">Update</a>
                 </button>
             </p>
+            </div>
         </div>
     </div>
 </div>   

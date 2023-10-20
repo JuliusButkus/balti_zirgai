@@ -85,6 +85,26 @@ div.form-background {
     height: 90vh;
     width: 100%
 }
+div.form-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    min-height: 90vh;
+    width: 150%;
+    box-sizing: border-box;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+div.form-main-content {
+    flex: 1;
+    text-align: center;
+    margin-top: 9rem;
+    padding-top: 10rem;
+    padding: 3.5rem;
+    box-sizing: border-box;
+}
 
 h1 {
     text-align: center;
