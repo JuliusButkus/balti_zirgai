@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-{% block title %}Log into {{ block.super }} {% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "Log into" %} {{ block.super }} {% endblock title %}
 {% block content %}
 <div class="form-container">
     <div class="form-background center">
         <div class="form-content center">
             <div class="form-main-content center">
-            <h1>Log in</h1>
+            <h1>{% trans "Log in" %}</h1>
             <form method="post" action="{% url "login" %}">
                 {% csrf_token %}
                 {{ form.as_p }} 
-                <p><button type="submit">Log In</button></p>
+                <p><button type="submit">{% trans "Log In" %}</button></p>
             </form>
-            <p><a href="{% url "password_reset" %}">Forgot password?</a></p>
-            <p>Don't have an account? <a href="{% url "signup" %}">sign up<a/><p>
+            <p><a href="{% url "password_reset" %}">{% trans "Forgot password" %}?</a></p>
+            <p>{% trans "Don't have an account" %}? <a href="{% url "signup" %}">{% trans "sign up" %}<a/><p>n account? <a href="{% url "signup" %}">sign up<a/><p>
             </div>
         </div>
     </div>

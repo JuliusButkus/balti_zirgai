@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 08:02+0000\n"
+"POT-Creation-Date: 2023-10-20 10:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "tipas"
 msgid "types"
 msgstr "tipai"
 
-#: alynas/models.py:33 alynas/templates/alynas/beer_meniu.html:46
+#: alynas/models.py:33 alynas/templates/alynas/beer_meniu.html:43
 msgid "beer type"
 msgstr "alaus tipas"
 
@@ -56,8 +56,7 @@ msgstr "įvykdytas"
 msgid "canceled"
 msgstr "atšauktas"
 
-#: alynas/models.py:59 alynas/templates/alynas/my_orders.html:10
-#: alynas/templates/alynas/order_detail.html:6
+#: alynas/models.py:59
 msgid "date"
 msgstr "data"
 
@@ -66,8 +65,6 @@ msgid "drinker"
 msgstr "gerėjas"
 
 #: alynas/models.py:65 alynas/models.py:89
-#: alynas/templates/alynas/my_orders.html:11
-#: alynas/templates/alynas/order_detail.html:7
 msgid "status"
 msgstr "statusas"
 
@@ -91,154 +88,29 @@ msgstr "užsakymo eilutė"
 msgid "orderlines"
 msgstr "užsakymo eilutės"
 
-#: alynas/templates/alynas/beer_detail.html:5
+#: alynas/templates/alynas/beer_detail.html:9
 msgid "beer describtion"
 msgstr "alaus aprašymas"
 
-#: alynas/templates/alynas/beer_detail.html:21
-msgid "Select Quantity:"
-msgstr "Pasirinkite kiekį"
-
-#: alynas/templates/alynas/beer_detail.html:23
-msgid "Add"
-msgstr "Pridėti"
-
-#: alynas/templates/alynas/beer_meniu.html:3
-msgid "beer available in white knight bar"
-msgstr "balti žirgai bare galima įsigyti"
-
-#: alynas/templates/alynas/beer_meniu.html:19
-#: alynas/templates/alynas/dark_beer.html:25
-#: alynas/templates/alynas/light_beer.html:22
-#: alynas/templates/inc/pager_prev_next.html:3
-msgid "first"
-msgstr "pirmas"
-
-#: alynas/templates/alynas/beer_meniu.html:21
-#: alynas/templates/alynas/dark_beer.html:27
-#: alynas/templates/alynas/light_beer.html:24
-#: alynas/templates/inc/pager_prev_next.html:5
-msgid "previous"
-msgstr "ankstesnis"
-
-#: alynas/templates/alynas/beer_meniu.html:27
-#: alynas/templates/alynas/dark_beer.html:33
-#: alynas/templates/alynas/light_beer.html:30
-#: alynas/templates/inc/pager_prev_next.html:11
-msgid "next"
-msgstr "sekantis"
-
-#: alynas/templates/alynas/beer_meniu.html:29
-#: alynas/templates/alynas/dark_beer.html:35
-#: alynas/templates/alynas/light_beer.html:32
-#: alynas/templates/inc/pager_prev_next.html:13
-msgid "last"
-msgstr "paskutinis"
-
-#: alynas/templates/alynas/beer_meniu.html:33
-msgid "search beer..."
-msgstr "ieškoti alaus..."
-
-#: alynas/templates/alynas/beer_meniu.html:35
-#: alynas/templates/inc/pager_prev_next.html:19
-msgid "reset"
-msgstr "atstatyti"
-
-#: alynas/templates/alynas/beer_meniu.html:43
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
+#: alynas/templates/alynas/beer_meniu.html:40
 msgid "name"
 msgstr "pavadinimas"
 
-#: alynas/templates/alynas/beer_meniu.html:44
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
-#: alynas/templates/alynas/order_detail.html:15
+#: alynas/templates/alynas/beer_meniu.html:41
 msgid "price"
 msgstr "kaina"
 
-#: alynas/templates/alynas/beer_meniu.html:45
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
+#: alynas/templates/alynas/beer_meniu.html:42
 msgid "available liters"
 msgstr "likutis litrais"
 
-#: alynas/templates/alynas/beer_meniu.html:58
+#: alynas/templates/alynas/beer_meniu.html:55
 msgid "no beer available"
 msgstr "alaus nėra"
-
-#: alynas/templates/alynas/dark_beer.html:3
-msgid "dark beers in"
-msgstr "tamsus alus"
-
-#: alynas/templates/alynas/dark_beer.html:5
-msgid "dark beers"
-msgstr "tamsus alus"
-
-#: alynas/templates/alynas/dark_beer.html:8
-msgid ""
-"Dark beers undergo a distinct brewing process where roasted malts play a "
-"central role. These malts are kilned longer to achieve their deep, rich "
-"color and complex flavor profile, often featuring notes of coffee, "
-"chocolate, and caramel. The use of dark malts adds a unique depth to the "
-"beer, and the hop bitterness is usually subdued, allowing the malt character "
-"to shine. This results in a dark, sometimes nearly opaque beer with a "
-"moderate to high alcohol by volume, offering a full-bodied and often warming "
-"experience that appeals to those who appreciate a more robust and flavorful "
-"beer."
-msgstr ""
-"Tamsus alus turi išskirtinį virimo procesą, kuriame svarbų vaidmenį atlieka "
-"skrudinti salyklo grūdai.Šie salyklo grūdai yra ilgiau džiovinami, siekiant "
-"gauti gilų, turtingą spalvą ir kompleksišką skonį, dažnai su kava, šokoladu "
-"ir karamelės aromatais.Tamsių salyklo grūdų naudojimas suteikia alui unikalų "
-"tirštumą, o švelnumas kartumas dažniausiai yra slopinamas, leidžiant "
-"salyklui išsiskirti.Tai sukuria tamsų, kartais beveik nepermatomą alų, "
-"turintį vidutinį iki didelio alkoholio koncentracijos, siūlantį pilnu kūnu "
-"ir dažniausiai šildantį patyrimą, kuris patinka tiems, kurie vertina "
-"stipresnį ir skanesnį alų."
 
 #: alynas/templates/alynas/index.html:3
 msgid "welcome to"
 msgstr "sveiki atvykę į"
-
-#: alynas/templates/alynas/index.html:14
-msgid "white knight brewery - beer page"
-msgstr "baras balti zirgai - alaus puslapis"
-
-#: alynas/templates/alynas/index.html:15
-msgid ""
-"Welcome to White Knight Brewery - page dedicated to beer, spreading taste "
-"like a fairy tale and captivating like a painting."
-msgstr ""
-"Sveiki atvyke į Balti Žirgai alaus darykla - puslapį, skirtą alui, "
-"skleidžiančiam skonį."
-
-#: alynas/templates/alynas/index.html:16
-msgid ""
-"Here, amid the notes of flavor and traces of aroma, we embark on a beer "
-"journey crafted not only by the green fields but also by every golden drop "
-"sliding in the glass."
-msgstr ""
-
-#: alynas/templates/alynas/index.html:17
-msgid ""
-"Explore a world where beer is not just a taste but also tells a story. Balti "
-"Žirgai Brewery invites you to discover the mysterious world of various beer "
-"styles, where different aromas and flavors create a unique beer landscape."
-msgstr ""
-
-#: alynas/templates/alynas/index.html:18
-msgid ""
-"Join us on our journey where brewing masters and beer artisans travel "
-"through paths of tradition and innovation, and you can be part of this "
-"flavorful adventure."
-msgstr ""
-
-#: alynas/templates/alynas/index.html:19
-msgid ""
-"Welcome to Balti Žirgai Brewery - page, where the beer feast becomes not "
-"only a taste delight but also a cultural experience."
-msgstr ""
 
 #: alynas/templates/alynas/index.html:20
 msgid "Currently in our White Knight we have"
@@ -256,136 +128,168 @@ msgstr "skirtingų alaus rūšių"
 msgid "your visits"
 msgstr "Jūsų apsilankymai"
 
-#: alynas/templates/alynas/light_beer.html:3
-msgid "Light beers in"
-msgstr ""
+#: alynas/templates/base.html:9
+msgid "balti žirgai"
+msgstr "balti žirgai"
 
-#: alynas/templates/alynas/light_beer.html:5
+#: alynas/templates/base.html:16
 #, fuzzy
-#| msgid "beers"
-msgid "Light beers"
-msgstr "alus"
-
-#: alynas/templates/alynas/light_beer.html:8
-msgid ""
-"Light beers are brewed using a meticulous process designed to reduce both "
-"color and caloric content. This typically involves using a larger percentage "
-"of pale malts and extended fermentation to achieve a crisp, refreshing "
-"taste. The result is a pale, clear beer with a subtle malt sweetness and a "
-"lower alcohol by volume, making it a perfect choice for those seeking a "
-"lighter, easy-drinking option, especially on warm days."
-msgstr ""
-
-#: alynas/templates/alynas/my_beer.html:2 alynas/templates/base.html:17
-#, fuzzy
-#| msgid "beer"
-msgid "my beer"
-msgstr "alus"
-
-#: alynas/templates/alynas/my_beer.html:4
-#, fuzzy
-#| msgid "ordered beer"
-msgid "my ordered beers"
-msgstr "užsakytas alus"
-
-#: alynas/templates/alynas/my_beer.html:8
-#: alynas/templates/alynas/order_detail.html:13
-#, fuzzy
-#| msgid "beer meniu"
-msgid "beer name"
-msgstr "alaus meniu"
-
-#: alynas/templates/alynas/my_beer.html:9
-#: alynas/templates/alynas/order_detail.html:14
-msgid "quantity"
-msgstr "kiekis"
-
-#: alynas/templates/alynas/my_beer.html:10
-#: alynas/templates/alynas/my_orders.html:9
-#: alynas/templates/alynas/order_detail.html:5
-#: alynas/templates/alynas/order_detail.html:16
-msgid "total price"
-msgstr "iš viso"
-
-#: alynas/templates/alynas/my_beer.html:20
-msgid "total price for all beers"
-msgstr "bendra užsakymo suma"
-
-#: alynas/templates/alynas/my_beer.html:23
-msgid "buy all"
-msgstr "pirkti"
-
-#: alynas/templates/alynas/my_beer.html:26
-msgid "No beers purchased yet"
-msgstr "Alaus užsakymų nėra"
-
-#: alynas/templates/alynas/my_beer.html:28
-#: alynas/templates/alynas/my_orders.html:2
-#: alynas/templates/alynas/my_orders.html:4
-msgid "my orders"
-msgstr "užsakymai"
-
-#: alynas/templates/alynas/my_orders.html:8
-msgid "Order ID"
-msgstr "užsakymas"
-
-#: alynas/templates/alynas/my_orders.html:12
-msgid "view order"
-msgstr "peržiūrėti užsakymą"
-
-#: alynas/templates/alynas/my_orders.html:25
-msgid "No orders found"
-msgstr "Užsakymų nerasta"
-
-#: alynas/templates/alynas/order_detail.html:2
-msgid "order detail"
-msgstr "užsakymo informacija"
-
-#: alynas/templates/alynas/order_detail.html:4
-msgid "Order Detail - Order ID"
-msgstr "Išsami užsakymo informacija"
-
-#: alynas/templates/alynas/order_detail.html:9
-#, fuzzy
-#| msgid "ordered beers"
-msgid "Ordered Beers"
-msgstr "užsakytas alus"
-
-#: alynas/templates/alynas/order_detail.html:28
-msgid "No orders have been made"
-msgstr "Užsakymų nėra"
-
-#: alynas/templates/base.html:7 alynas/templates/base.html:14
-#: alynas/templates/base.html:49
-msgid "white knight"
+#| msgid "white knight"
+msgid "White Knight"
 msgstr "Balti žirgai"
 
-#: alynas/templates/base.html:15
+#: alynas/templates/base.html:17
 msgid "beer meniu"
 msgstr "alaus meniu"
 
-#: alynas/templates/base.html:27
+#: alynas/templates/base.html:19
+msgid "My Beer"
+msgstr "Mano Alus"
+
+#: alynas/templates/base.html:29
 msgid "admin"
 msgstr "administratorius"
 
-#: alynas/templates/base.html:29
+#: alynas/templates/base.html:31
 msgid "logout"
 msgstr "atsijungti"
 
-#: alynas/templates/base.html:31
-msgid "Welcome, Drinker"
-msgstr "Sveiki, Degustatoriau"
-
-#: alynas/templates/base.html:32
-msgid "login"
+#: alynas/templates/base.html:34
+#, fuzzy
+#| msgid "login"
+msgid "Login"
 msgstr "prisijungti"
 
-#: alynas/templates/base.html:33
-msgid "sign up"
+#: alynas/templates/base.html:35
+#, fuzzy
+#| msgid "sign up"
+msgid "Sign Up"
 msgstr "registruotis"
 
-#~ msgid "balti žirgai"
-#~ msgstr "balti žirgai"
+#~ msgid "Select Quantity:"
+#~ msgstr "Pasirinkite kiekį"
 
-#~ msgid "My Beer"
-#~ msgstr "Mano Alus"
+#~ msgid "Add"
+#~ msgstr "Pridėti"
+
+#~ msgid "beer available in white knight bar"
+#~ msgstr "balti žirgai bare galima įsigyti"
+
+#~ msgid "first"
+#~ msgstr "pirmas"
+
+#~ msgid "previous"
+#~ msgstr "ankstesnis"
+
+#~ msgid "next"
+#~ msgstr "sekantis"
+
+#~ msgid "last"
+#~ msgstr "paskutinis"
+
+#~ msgid "search beer..."
+#~ msgstr "ieškoti alaus..."
+
+#~ msgid "reset"
+#~ msgstr "atstatyti"
+
+#~ msgid "dark beers in"
+#~ msgstr "tamsus alus"
+
+#~ msgid "dark beers"
+#~ msgstr "tamsus alus"
+
+#~ msgid ""
+#~ "Dark beers undergo a distinct brewing process where roasted malts play a "
+#~ "central role. These malts are kilned longer to achieve their deep, rich "
+#~ "color and complex flavor profile, often featuring notes of coffee, "
+#~ "chocolate, and caramel. The use of dark malts adds a unique depth to the "
+#~ "beer, and the hop bitterness is usually subdued, allowing the malt "
+#~ "character to shine. This results in a dark, sometimes nearly opaque beer "
+#~ "with a moderate to high alcohol by volume, offering a full-bodied and "
+#~ "often warming experience that appeals to those who appreciate a more "
+#~ "robust and flavorful beer."
+#~ msgstr ""
+#~ "Tamsus alus turi išskirtinį virimo procesą, kuriame svarbų vaidmenį "
+#~ "atlieka skrudinti salyklo grūdai.Šie salyklo grūdai yra ilgiau "
+#~ "džiovinami, siekiant gauti gilų, turtingą spalvą ir kompleksišką skonį, "
+#~ "dažnai su kava, šokoladu ir karamelės aromatais.Tamsių salyklo grūdų "
+#~ "naudojimas suteikia alui unikalų tirštumą, o švelnumas kartumas "
+#~ "dažniausiai yra slopinamas, leidžiant salyklui išsiskirti.Tai sukuria "
+#~ "tamsų, kartais beveik nepermatomą alų, turintį vidutinį iki didelio "
+#~ "alkoholio koncentracijos, siūlantį pilnu kūnu ir dažniausiai šildantį "
+#~ "patyrimą, kuris patinka tiems, kurie vertina stipresnį ir skanesnį alų."
+
+#~ msgid "white knight brewery - beer page"
+#~ msgstr "baras balti zirgai - alaus puslapis"
+
+#~ msgid ""
+#~ "Welcome to White Knight Brewery - page dedicated to beer, spreading taste "
+#~ "like a fairy tale and captivating like a painting."
+#~ msgstr ""
+#~ "Sveiki atvyke į Balti Žirgai alaus darykla - puslapį, skirtą alui, "
+#~ "skleidžiančiam skonį."
+
+#, fuzzy
+#~| msgid "beers"
+#~ msgid "Light beers"
+#~ msgstr "alus"
+
+#, fuzzy
+#~| msgid "beer"
+#~ msgid "my beer"
+#~ msgstr "alus"
+
+#, fuzzy
+#~| msgid "ordered beer"
+#~ msgid "my ordered beers"
+#~ msgstr "užsakytas alus"
+
+#, fuzzy
+#~| msgid "beer meniu"
+#~ msgid "beer name"
+#~ msgstr "alaus meniu"
+
+#~ msgid "quantity"
+#~ msgstr "kiekis"
+
+#~ msgid "total price"
+#~ msgstr "iš viso"
+
+#~ msgid "total price for all beers"
+#~ msgstr "bendra užsakymo suma"
+
+#~ msgid "buy all"
+#~ msgstr "pirkti"
+
+#~ msgid "No beers purchased yet"
+#~ msgstr "Alaus užsakymų nėra"
+
+#~ msgid "my orders"
+#~ msgstr "užsakymai"
+
+#~ msgid "Order ID"
+#~ msgstr "užsakymas"
+
+#~ msgid "view order"
+#~ msgstr "peržiūrėti užsakymą"
+
+#~ msgid "No orders found"
+#~ msgstr "Užsakymų nerasta"
+
+#~ msgid "order detail"
+#~ msgstr "užsakymo informacija"
+
+#~ msgid "Order Detail - Order ID"
+#~ msgstr "Išsami užsakymo informacija"
+
+#, fuzzy
+#~| msgid "ordered beers"
+#~ msgid "Ordered Beers"
+#~ msgstr "užsakytas alus"
+
+#~ msgid "No orders have been made"
+#~ msgstr "Užsakymų nėra"
+
+#~ msgid "Welcome, Drinker"
+#~ msgstr "Sveiki, Degustatoriau"
