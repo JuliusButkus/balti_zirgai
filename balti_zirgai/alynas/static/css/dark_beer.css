@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center; 
+    /* background-image:  url('/static/img/background1.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-origin: border-box;   */
+}
+div.beer {
+    display: flex;
+    background-image: url('/static/img/darkpapyrus.png');
+    background-size: 77% 115%;
+    background-repeat:no-repeat;
+    background-position:center center;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+table.beers {
+    margin-left: auto;
+    margin-right: auto;
+}
+table.beers td {
+    font-family: papyrus;
+    font-style: italic;
+    font-weight: 800;
+}
+table.beers th {
+    font-family: papyrus;
+    font-style: italic;
+    font-weight: 800;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+table.beers a {
+    color: black;
+}
+table.beers a:hover {
+    color: #FFCC00;
+    text-decoration: underline;
+}
+img.beer_img {
+    display: block;
+    margin-right: 100px;
+    width: 350px;
+}
+div.float_right {
+    margin-top: auto;
+    margin-left: auto;
+}
+ h4 {
+    font-style: italic;
+    margin-left: 2rem;
+    color: azure;
+}
+h1 {
+    color : azure;
+    size: 20px;
+}
+/* div.beer {
+    display: flex;
+    background-image: url('/static/img/darkpapyrus.png');
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background-position:center center;
+    border-collapse: collapse;
+    
+}  */
