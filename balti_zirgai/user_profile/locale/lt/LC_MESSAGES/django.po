@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 11:11+0000\n"
+"POT-Creation-Date: 2023-10-20 13:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,92 +36,92 @@ msgstr "profilis"
 msgid "profiles"
 msgstr "profiliai"
 
-#: user_profile/templates/registration/logged_out.html:2
+#: user_profile/templates/registration/logged_out.html:3
 msgid "Logged out from"
 msgstr "Atsijungęs nuo"
 
-#: user_profile/templates/registration/logged_out.html:4
+#: user_profile/templates/registration/logged_out.html:9
 msgid "Logged out"
 msgstr "Atsijungęs"
 
-#: user_profile/templates/registration/logged_out.html:5
+#: user_profile/templates/registration/logged_out.html:10
 msgid "You are logged out"
 msgstr "Esate neprisijungęs"
 
-#: user_profile/templates/registration/logged_out.html:6
+#: user_profile/templates/registration/logged_out.html:11
 msgid "log in"
 msgstr "Prisijungti"
 
-#: user_profile/templates/registration/login.html:2
+#: user_profile/templates/registration/login.html:3
 msgid "Log into"
 msgstr "Prisijungti"
 
-#: user_profile/templates/registration/login.html:4
-#: user_profile/templates/user_profile/signup.html:26
+#: user_profile/templates/registration/login.html:9
+#: user_profile/templates/user_profile/signup.html:31
 msgid "Log in"
 msgstr "Prisijungti"
 
-#: user_profile/templates/registration/login.html:8
+#: user_profile/templates/registration/login.html:13
 msgid "Log In"
 msgstr "Prisijungti"
 
-#: user_profile/templates/registration/login.html:10
+#: user_profile/templates/registration/login.html:15
 msgid "Forgot password"
 msgstr "Užmiršote slaptažodį"
 
-#: user_profile/templates/registration/login.html:11
+#: user_profile/templates/registration/login.html:16
 msgid "Don't have an account"
 msgstr "Neturite paskyros"
 
-#: user_profile/templates/registration/login.html:11
-#: user_profile/templates/user_profile/signup.html:4
+#: user_profile/templates/registration/login.html:16
+#: user_profile/templates/user_profile/signup.html:9
 msgid "sign up"
-msgstr "Registruotis"
+msgstr "registruotis"
 
-#: user_profile/templates/registration/password_reset_complete.html:2
-#: user_profile/templates/registration/password_reset_done.html:2
+#: user_profile/templates/registration/password_reset_complete.html:3
+#: user_profile/templates/registration/password_reset_done.html:3
 msgid "Password reset at"
 msgstr "Keisti slaptažodį"
 
-#: user_profile/templates/registration/password_reset_complete.html:4
+#: user_profile/templates/registration/password_reset_complete.html:10
 msgid "Password Reset Done"
 msgstr "Slaptažodžio keitimas atliktas"
 
-#: user_profile/templates/registration/password_reset_complete.html:5
+#: user_profile/templates/registration/password_reset_complete.html:11
 msgid "You can"
 msgstr "Dabar galite"
 
-#: user_profile/templates/registration/password_reset_complete.html:5
+#: user_profile/templates/registration/password_reset_complete.html:11
 msgid "login"
 msgstr "prisijungti"
 
-#: user_profile/templates/registration/password_reset_complete.html:5
+#: user_profile/templates/registration/password_reset_complete.html:11
 msgid "now with your new password"
 msgstr "su nauju slaptažodžiu"
 
-#: user_profile/templates/registration/password_reset_confirm.html:2
-#: user_profile/templates/registration/password_reset_form.html:2
+#: user_profile/templates/registration/password_reset_confirm.html:3
+#: user_profile/templates/registration/password_reset_form.html:3
 msgid "Password Reset at"
 msgstr "Slaptažodžio keitimas"
 
-#: user_profile/templates/registration/password_reset_confirm.html:4
+#: user_profile/templates/registration/password_reset_confirm.html:9
 msgid "Enter New Password"
 msgstr "Įveskite naują slaptažodį"
 
-#: user_profile/templates/registration/password_reset_confirm.html:8
-#: user_profile/templates/registration/password_reset_form.html:8
+#: user_profile/templates/registration/password_reset_confirm.html:13
+#: user_profile/templates/registration/password_reset_form.html:13
 msgid "Confirm"
 msgstr "Patvirtinti"
 
-#: user_profile/templates/registration/password_reset_done.html:4
+#: user_profile/templates/registration/password_reset_done.html:9
 msgid "Check Your Email"
 msgstr "Pasitikrinkite savo el. paštą"
 
-#: user_profile/templates/registration/password_reset_done.html:5
+#: user_profile/templates/registration/password_reset_done.html:10
 msgid "We have sent you an email with further instructions."
 msgstr "Išsiuntėme jums el. laišką su papildomomis instrukcijomis."
 
-#: user_profile/templates/registration/password_reset_form.html:4
+#: user_profile/templates/registration/password_reset_form.html:9
 msgid "Reset Your Password"
 msgstr "Atstatyti slaptažodį"
 
@@ -137,15 +137,15 @@ msgstr "vardas"
 
 #: user_profile/templates/user_profile/profile.html:17
 msgid "First Name is not available"
-msgstr ""
+msgstr "Vardas nenurodytas"
 
 #: user_profile/templates/user_profile/profile.html:20
 msgid "last name"
-msgstr ""
+msgstr "pavardė"
 
 #: user_profile/templates/user_profile/profile.html:22
 msgid "Last Name is not available"
-msgstr ""
+msgstr "Pavardė nenurodyta"
 
 #: user_profile/templates/user_profile/profile.html:24
 msgid "email"
@@ -155,45 +155,45 @@ msgstr "el. paštas"
 msgid "update"
 msgstr "atnaujinti"
 
-#: user_profile/templates/user_profile/signup.html:2
+#: user_profile/templates/user_profile/signup.html:3
 msgid "Sign up to"
 msgstr "Prisiregistruoti prie"
 
-#: user_profile/templates/user_profile/signup.html:8
+#: user_profile/templates/user_profile/signup.html:13
 #, fuzzy
 #| msgid "user"
 msgid "username"
 msgstr "vartotojas"
 
-#: user_profile/templates/user_profile/signup.html:12
+#: user_profile/templates/user_profile/signup.html:17
 msgid "E-mail"
 msgstr "El.-paštas"
 
-#: user_profile/templates/user_profile/signup.html:16
+#: user_profile/templates/user_profile/signup.html:21
 msgid "password"
 msgstr "slaptažodis"
 
-#: user_profile/templates/user_profile/signup.html:20
+#: user_profile/templates/user_profile/signup.html:25
 msgid "repeat password"
 msgstr "pakartoti slaptažodį"
 
-#: user_profile/templates/user_profile/signup.html:23
+#: user_profile/templates/user_profile/signup.html:28
 msgid "confirm"
 msgstr "patvirtinti"
 
-#: user_profile/templates/user_profile/signup.html:25
+#: user_profile/templates/user_profile/signup.html:30
 msgid "Already have account"
 msgstr "Turite paskyrą?"
 
-#: user_profile/templates/user_profile/update.html:2
+#: user_profile/templates/user_profile/update.html:3
 msgid "Update Your Profile at"
 msgstr "Profilio atnaujinimas"
 
-#: user_profile/templates/user_profile/update.html:7
+#: user_profile/templates/user_profile/update.html:8
 msgid "update your profile"
 msgstr "atnaujinti profilį"
 
-#: user_profile/templates/user_profile/update.html:12
+#: user_profile/templates/user_profile/update.html:13
 msgid "save changes"
 msgstr "išsaugoti pakeitimus"
 
@@ -216,3 +216,6 @@ msgstr "Slaptažodis yra per trumpas arba įvesti slaptažodžiai nesutampa."
 #: user_profile/views.py:72
 msgid "Sign up successful. You can log in now."
 msgstr "Užregistruota sėkmingai. Dabar galite prisijungti."
+
+#~ msgid "No account"
+#~ msgstr "Neturite paskyros"

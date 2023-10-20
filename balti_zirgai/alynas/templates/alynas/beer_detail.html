@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}"beer detail"{{ block.super }} {% endblock title %} 
+{% block title %}{% trans "beer detail"|title %}{{ block.super }} {% endblock title %} 
 {% block content %}
 <div class="container">
     <div class="background center">
@@ -17,12 +17,12 @@
                     </li>
                     <h3>{{ beer.name }} </h3>
                     <li> {{ beer.detail }}$ </li>
-                    <li> price {{ beer.price }}$ </li>
+                    <li> {% trans "price" %} {{ beer.price }}$ </li>
                     <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
                         {% csrf_token %}
-                        <label for="quantity">Select Quantity:</label>
+                        <label for="quantity">{% trans "Select Quantity" %}:</label>
                         <input type="number" name="quantity" id="quantity" min="1" value="1">
-                        <button type="submit" class="buy-button">Add</button>
+                        <button type="submit" class="buy-button">{% trans "Add" %}</button>
                     </form>
                 </ul>
             </div>

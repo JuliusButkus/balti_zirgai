@@ -30,7 +30,7 @@
                 {% endif %}
                 <li><a href="{% url "logout" %}">{% trans "logout"|title %}&#127866;</a></li>
             {% else %}
-                <li>Welcome, Drinker</li>
+                <li>{% trans "Welcome, Drinker" %}</li>
                 <li><a href="{% url "login" %}">{% trans "Login"|title %}</a></li>
                 <li><a href="{% url "signup" %}">{% trans "Sign Up"|title %}</a></li>
             {% endif %}
@@ -60,7 +60,7 @@
         {% endblock content %}
     </main>
     <footer>
-        <p>&copy; 2023 White Knight</p>
+        <p>&copy; 2023 {% trans "White Knight" %}</p>
     </footer>
 </body>
 </html>
