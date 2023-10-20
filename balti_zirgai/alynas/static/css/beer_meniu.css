@@ -20,13 +20,14 @@
     background-position:center top;
     background-origin: border-box;
     max-width: 2000px;
+    max-height: px;
     min-height: 90vh;
     width: 100%;
     box-sizing: border-box;
 }
 
 .side-image {
-    padding-top: 11rem;
+    padding-top: 11em;
     max-width: 100%;
     width: auto; /* Add this to ensure images don't exceed their container */
     height: 500px;  /* Add this to maintain the image's aspect ratio */
@@ -48,6 +49,7 @@
     margin-top: 9rem;
     padding-top: 10rem;
     padding: 3.5rem;
+    max-height: 600px;
     box-sizing: border-box;
 }
 
