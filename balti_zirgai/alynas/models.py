@@ -77,7 +77,7 @@ class Order(models.Model):
 
     def get_total_price(self):
         order_lines = self.orderline_set.all()
-        total_price = sum(order_line.price for order_line in order_lines)
+        total_price = sum(order_line.qty * order_line.price for order_line in order_lines)
         return total_price
 
     def get_status_display(self):

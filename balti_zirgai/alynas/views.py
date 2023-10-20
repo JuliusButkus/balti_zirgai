@@ -133,8 +133,8 @@ def buy_all_beers(request):
 def my_beer(request):
     purchases = models.Purchase.objects.filter(buyer=request.user)
     total_price = sum(purchase.total_price for purchase in purchases)
-    return render(request, 'alynas/my_beer.html', {'purchases': purchases, 'total_price': total_price})
-
+    order_data = models.Order.objects.filter(drinker=request.user)
+    return render(request, 'alynas/my_beer.html', {'purchases': purchases, 'total_price': total_price, 'order_data': order_data})
 @login_required
 def my_orders(request):
     user_orders = models.Order.objects.filter(drinker=request.user)
