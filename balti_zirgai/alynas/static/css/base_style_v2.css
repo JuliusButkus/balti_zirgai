@@ -200,4 +200,6 @@ div.beer {
     border-collapse: collapse;
     
 }
-
+form.inline-form {
+    display: inline-block;
+}
