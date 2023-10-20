@@ -45,7 +45,40 @@ class Beer(models.Model):
 
     def get_absolute_url(self):
         return reverse("beer_detail", kwargs={"pk": self.pk})
-    
+
+
+class BeerReview(models.Model):
+    beer = models.ForeignKey(
+        Beer,
+        verbose_name=_("beer"),
+        on_delete=models.CASCADE,
+        related_name='reviews',
+    )
+    reviewer = models.ForeignKey(
+        User,
+        verbose_name=_("reviewer"),
+        on_delete=models.CASCADE,
+        related_name='beer_reviews',
+    )
+    content = models.TextField(_("Content"), max_length=4000)
+    created_at = models.DateTimeField(
+        _("created at"), 
+        auto_now_add=True, 
+        db_index=True
+    )
+
+    class Meta:
+        verbose_name = _("beer review")
+        verbose_name_plural = _("beer reviews")
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.beer} review by {self.reviewer}"
+
+    def get_absolute_url(self):
+        return reverse("beerreview_detail", kwargs={"pk": self.pk})
+
+
 
 order_status =(
     (0, _("pending")),

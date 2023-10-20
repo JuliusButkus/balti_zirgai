@@ -21,6 +21,12 @@ class OrderLineAdmin(admin.ModelAdmin):
     list_filter = ('status', 'beer',) 
 
 
+@admin.register(models.BeerReview)
+class BeerReviewAdmin(admin.ModelAdmin):
+    list_display = ("beer", "reviewer", "created_at")
+    list_display_links = ("created_at", )
+
+
 admin.site.register(models.Type, TypeAdmin)
 admin.site.register(models.Beer, BeerAdmin)
 admin.site.register(models.Order, OrderAdmin)

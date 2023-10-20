@@ -235,3 +235,9 @@ div.beer {
 form.inline-form {
     display: inline-block;
 }
+
+/* Reviews */
+
+.float-right {
+    float: right;
+}
