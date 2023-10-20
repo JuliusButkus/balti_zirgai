@@ -1,12 +1,15 @@
 /* base style */
-body {
-    font-family:Papyrus; 
+body { 
     background-color: #CCCCCC;
     padding: 0; margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     min-width: 100vh;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: medium;
+    font-weight: 800;
 }
 main {
     flex-grow: 1;
@@ -65,9 +68,22 @@ p {
 
 /* Sign Up, Login Forms*/
 
-body {
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
+div.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+div.form-background {
+    background-image:  url('/static/img/meniu.png');
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-origin: border-box; 
+    max-width: 1250px;
+    min-height: 90vh;
+    height: 90vh;
+    width: 100%
 }
 
 h1 {
@@ -75,15 +91,12 @@ h1 {
     color: #333;
 }
 
-/* form {
+form {
     max-width: 300px;
     margin: 0 auto;
-    background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: rotate(-5deg);
-} */
+} 
 
 label {
     display: block;
@@ -100,7 +113,6 @@ input[type="password"] {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    /* transform: rotate(8deg) */
 }
 
 /* button.update-btn {
