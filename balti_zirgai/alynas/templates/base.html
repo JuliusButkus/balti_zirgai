@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 {% load static i18n %}
-<html lang="en">
-    <head>
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% trans "balti žirgai"|title %}{% endblock title %}</title>
@@ -32,6 +34,18 @@
                 <li><a href="{% url "login" %}">{% trans "Login"|title %}</a></li>
                 <li><a href="{% url "signup" %}">{% trans "Sign Up"|title %}</a></li>
             {% endif %}
+            <li>
+                <form class="inline-form" action="{% url "set_language" %}" method="POST">
+                    {% csrf_token %}
+                    <select name="language" onchange="this.form.submit();">
+                        {% for language in LANGUAGES %}
+                            <option value="{{ language.0 }}"
+                            {% if language.0 == LANGUAGE_CODE %} selected {% endif %}
+                            >{{ language.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </li>
         </ul>
     </header>
     <main>
