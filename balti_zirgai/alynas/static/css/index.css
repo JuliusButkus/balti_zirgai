@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image:  url('/static/img/meniu.png');
+    background-size: auto 90%;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-origin: border-box;
+    max-width: 2000px;
+    min-height: 90vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+.side-image {
+    padding-top: 11rem;
+    max-width: 100%;
+    width: auto; /* Add this to ensure images don't exceed their container */
+    height: 500px;  /* Add this to maintain the image's aspect ratio */
+    display: block;
+}
+
+.side-image.left {
+    flex: 1;
+    text-align: left center;
+}
+
+.side-image.right {
+    flex: 1;
+    text-align: right center;
+}
+.main-content {
+    flex: 1;
+    text-align: center;
+    margin-top: 9rem;
+    padding-top: 10rem;
+    padding: 3.5rem;
+    box-sizing: border-box;
+}
