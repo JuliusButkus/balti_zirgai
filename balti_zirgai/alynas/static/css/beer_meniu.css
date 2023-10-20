@@ -1,30 +1,105 @@
-h1.beer-meniu {
-    text-align: center;
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    /* background-image:  url('/static/img/background1.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-origin: border-box;   */
 }
-div.pager {
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image:  url('/static/img/meniu.png');
+    background-size: auto 90%;
+    background-repeat:no-repeat;
+    background-position:center top;
+    background-origin: border-box;
+    max-width: 2000px;
+    min-height: 90vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.side-image {
+    padding-top: 11rem;
+    max-width: 100%;
+    width: auto; /* Add this to ensure images don't exceed their container */
+    height: 500px;  /* Add this to maintain the image's aspect ratio */
+    display: block;
+}
+
+.side-image.left {
+    flex: 1;
+    text-align: left center;
+}
+
+.side-image.right {
+    flex: 1;
+    text-align: right center;
+}
+.main-content {
+    flex: 1;
+    text-align: center;
+    margin-top: 9rem;
+    padding-top: 10rem;
+    padding: 3.5rem;
+    box-sizing: border-box;
+}
+
+.pager {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    justify-content: center;
+    top: auto;
+    padding: 10px;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: smaller;
+    font-weight: 600;
+}
+
+table.beer-meniu {
+    orientation: landscape;
     orientation: center;
-    min-width: 100vh;
-    display: inline-block;
-    margin: 0.5rem 1rem;
+    list-style-type: none;
+    margin-left: 1.5rem;
 }
-div.pager a {
+table.beer-meniu th{
+    padding: 0.8rem;
     text-align: center;
-    border: 1px solid #ccaa77;
-    background-color: #d8d8d8;
-    border-radius: 0.25rem;
-    padding: 0.25rem;;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: medium;
+    font-weight: 600;
 }
-div.pager a:hover {
-    background-color: #dddddd;
+table.beer-meniu td{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    color: #333333;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: medium;
+    font-weight: 600;
 }
-form.beer-search {
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+table.beer-meniu td a{
+    text-decoration: none;
+    color: #333333;
+    font-family: Papyrus;
+}
+table.beer-meniu td a:hover{
+    text-decoration: underline;
+    color: rgba(10, 7, 40, 0.379); 
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
 }
 form.beer-search label {
     display: inline-block;
@@ -36,9 +111,13 @@ div.pager input {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: smaller;
+    font-weight: 600;
 }
 div.pager button {
-    width: 5%;
+    width: 15%;
     padding: 10px;
     background-color: #582f7e73;
     border: none;
@@ -49,33 +128,26 @@ div.pager button:hover {
     background-color: #5045a0;
     transform: none;
 }
-table.beer-meniu {
-    orientation: landscape;
-    orientation: center;
-    list-style-type: none;
-    margin-left: 1.5rem;
-}
-table.beer-meniu th{
-    padding: 0.8rem;
+
+div.pager a {
     text-align: center;
-    font-style: italic;
-}
-table.beer-meniu td{
-    margin-bottom: 0.5rem;
-    padding: 0.5rem;
-    text-align: center;
-    color: #333333;
+    border: 1px solid #ccaa77;
+    background-color: #d8d8d8;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
     font-family: Papyrus;
     font-style: italic;
-    font-size: large;
-    font-weight: 800;
+    font-size: smaller;
+    font-weight: 600;
 }
-table.beer-meniu td a{
-    text-decoration: none;
-    color: #333333;
-    font-family: Papyrus;
+div.pager a:hover {
+    background-color: #dddddd;
 }
-table.beer-meniu td a:hover{
-    text-decoration: underline;
-    color: rgb(163, 163, 0);
+form.beer-search {
+    margin: 0 auto;
+    padding: 5px;
+}
+form.beer-search label {
+    display: inline-block;
+    margin-bottom: 5px;
 }
