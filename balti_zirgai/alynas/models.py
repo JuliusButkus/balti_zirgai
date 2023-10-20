@@ -73,7 +73,7 @@ class BeerReview(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"{self.name} review by {self.reviewer}"
+        return f"{self.beer} review by {self.reviewer}"
 
     def get_absolute_url(self):
         return reverse("beerreview_detail", kwargs={"pk": self.pk})
