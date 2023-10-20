@@ -47,71 +47,20 @@ header ul.nav li {
 }
 h1, h2, h3 { 
     border-bottom: 2px solid #FFCC00; 
-    box-shadow: 0 3px 5px #00000033;
     padding: 1rem;
-    background-color: #d8d8d8;
+    background-color: transparent;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: large;
+    font-weight: 1000;
 }
 p {
+    text-align: left;
+    font-family: Papyrus;
+    font-style: italic;
+    font-size: medium;
+    font-weight: 800;
     padding: 0 1rem;
-}
-/* index Css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-/* .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    /*max-width: 100%; 
-    max-height: 100%;*/
-    /* margin-right: 10%; */
-/* }
-
-#left img {
-    width: 300px;
-}
- */
-
-/* #bg img {
-    width: 800px;
-    margin-left: 25%;
-} */ 
-
-/* .container {
-    display: flex;
-    max-width: 100%;
-    margin: 20px;
-    position: absolute;
-} */
-/* #right img {
-    width: 400px;
-    margin-left: 40%;
-}
-.image {
-    margin: 0 10px;
-}
-.right-image {
-    max-width: 100%;
-    order: 1;
-    width: 25%;
-    right: -1rem;
-    position: absolute;
-    margin-top: 10%;
- 
-} */
-
-.description {
-    position: relative;
-    margin-bottom: 7%;
-    right: 400px;
-    width: 100%;
-    height: 100%;
-    background-color: transparent !important;
-    padding: 10px;
-    z-index: 1;
-    line-height: 1;
 }
 
 /* Sign Up, Login Forms*/
