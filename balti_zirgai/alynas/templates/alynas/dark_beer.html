@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}Dark beers in {{ block.super }}{% endblock title %}
+{% block title %}{% trans "dark beers in"|title %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Dark Beers</h1>
+<h1>{% trans "dark beers"|title %}</h1>
 <div style="width: 100%;">
     <div style="float:left; width: 50%">
-        <h4>Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer.</h4>
+        <h4>{% trans "Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer." %}</h4>
         <div class="beer">
             <table class="beers";>
-                <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
+                <tr><th>{% trans "name"|title %}</th><th>{% trans "available liters"|title %}</th><th>{% trans "price"|title %} $</th></tr>
                 {% for beer in beers %}
                     <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
                 {% endfor %}
@@ -22,17 +22,17 @@
 <div style="clear:both"></div>
 <div class="pager">
     {% if page_obj.has_previous %}
-        <a href="?page=1">First</a>
+        <a href="?page=1">{% trans "first"|title %}</a>
         {% if page_obj.previous_page_number != 1 %}
-            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            <a href="?page={{ page_obj.previous_page_number }}">{% trans "previous"|title %}</a>
         {% endif %}
     {% endif %}
     <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} </span>
     {% if page_obj.has_next %}
         {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
-            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a href="?page={{ page_obj.next_page_number }}">{% trans "next"|title %}</a>
         {% endif %}
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "last"|title %}</a>
     {% endif %}
 </div>
 {% endblock content %}

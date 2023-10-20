@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}beer available in White Knight bar{{ block.super }}{% endblock title %}
+{% block title %}{% trans "beer available in white knight bar"|title %}{{ block.super }}{% endblock title %}
 {% block content %}
 <div class="container">
     {% comment %} <div class="header"> 
@@ -15,23 +15,23 @@
         <div class="main-content">
             <div class="pager">
                 {% if page_obj.has_previous %}
-                    <a href="?page=1">First</a>
+                    <a href="?page=1">{% trans "first"|title %}</a>
                     {% if page_obj.previous_page_number != 1 %}
-                        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">{% trans "previous"|title %}</a>
                     {% endif %}
                 {% endif %}
                 <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} </span>
                 {% if page_obj.has_next %}
                     {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
-                        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                        <a href="?page={{ page_obj.next_page_number }}">{% trans "next"|title %}</a>
                     {% endif %}
-                    <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "last"|title %}</a>
                 {% endif %}
                 {% if search %}
                     <form class="beer-search" method="GET" action="{{ request.path }}">
-                        <input type="text" name="query" value="{{ request.GET.query }}" placeholder="search beer...">
+                        <input type="text" name="query" value="{{ request.GET.query }}" placeholder="{% trans "search beer..."|title %}">
                         <button type="submit">&#128269;</button>
-                        <a href="{{ request.path }}">reset</a>
+                        <a href="{{ request.path }}">{% trans "reset"|title %}</a>
                     </form>
                 {% endif %}
             </div>

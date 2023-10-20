@@ -17,9 +17,9 @@
             <li> price {{ beer.price }}$ </li>
             <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
                 {% csrf_token %}
-                <label for="quantity">Select Quantity:</label>
+                <label for="quantity">{% trans "Select Quantity:"|title %}</label>
                 <input type="number" name="quantity" id="quantity" min="1" value="1">
-                <button type="submit" class="buy-button">Add</button>
+                <button type="submit" class="buy-button">{% trans "Add"|title %}</button>
             </form>
         </div>
     {% comment %} {% endfor %} {% endcomment %}

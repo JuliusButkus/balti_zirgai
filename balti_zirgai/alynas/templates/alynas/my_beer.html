@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% block title %}My Beer{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "my beer"|title %}{% endblock title %}
 {% block content %}
-    <h1>My Ordered Beers</h1>
+    <h1>{% trans "my ordered beers"|title %}</h1>
     {% if purchases %}
         <table>
             <tr>
-                <th>Beer Name</th>
-                <th>Quantity</th>
-                <th>Total Price</th>
+                <th>{% trans "beer name"|title %}</th>
+                <th>{% trans "quantity"|title %}</th>
+                <th>{% trans "total price"|title %}</th>
             </tr>
             {% for purchase in purchases %}
                 <tr>
@@ -17,13 +18,13 @@
                 </tr>
             {% endfor %}
         </table>
-        <p>Total Price for All Beers: {{ total_price }}</p>
+        <p>{% trans "total price for all beers"|title %}: {{ total_price }}</p>
         <form method="post" action="{% url 'buy_all_beers' %}">
             {% csrf_token %}
-            <button type="submit">Buy All</button>
+            <button type="submit">{% trans "buy all"|title %}</button>
         </form>
     {% else %}
-        <p>No beers purchased yet.</p>
+        <p>{% trans "No beers purchased yet" %}.</p>
     {% endif %}
-    <p><a href="{% url 'my_orders' %}">My Orders</a></p>
+    <p><a href="{% url 'my_orders' %}">{% trans "my orders"|title %}</a></p>
 {% endblock content %}

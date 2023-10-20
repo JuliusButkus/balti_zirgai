@@ -1,15 +1,16 @@
 {% extends "base.html" %}
-{% block title %}My Orders{% endblock title %}
+{% load static i18n %}
+{% block title %}{% trans "my orders"|title %}{% endblock title %}
 {% block content %}
-    <h1>My Orders</h1>
+    <h1>{% trans "my orders" %}</h1>
     {% if order_data %}
         <table class="tbl_orders">
             <tr>
-                <th>Order ID</th>
-                <th>Total Price</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>View Order</th>
+                <th>{% trans "Order ID" %}</th>
+                <th>{% trans "total price"|title %}</th>
+                <th>{% trans "date"|title %}</th>
+                <th>{% trans "status"|title %}</th>
+                <th>{% trans "view order" %}</th>
             </tr>
             {% for data in order_data %}
                 <tr>
@@ -22,6 +23,6 @@
             {% endfor %}
         </table>
     {% else %}
-        <p>No orders found.</p>
+        <p>{% trans "No orders found" %}.</p>
     {% endif %}
 {% endblock content %}

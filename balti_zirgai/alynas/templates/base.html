@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% trans "balti žirgai"|title %}{% endblock title %}</title>
+    <title>{% block title %} {% trans "white knight"|title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static "css/base_style_v2.css" %}">
     <style></style>
 </head>
 <body>
     <header>
         <ul class="nav">
-            <li class="logo"><a href="{% url "index" %}">{% trans "White Knight"|title %}</a></li>
+            <li class="logo"><a href="{% url "index" %}">{% trans "white knight"|title %}</a></li>
             <li><a href="{% url "beer_meniu" %}">{% trans "beer meniu"|title %}</a></li>
             <li class="spacer"></li>
-            <li><a href="{% url "my_beer" %}">{% trans "My Beer"|title %}</a></li>
+            <li><a href="{% url "my_beer" %}">{% trans "my beer"|title %}</a></li>
             {% if user.is_authenticated %}
                 <li>
                     {% if user.profile.photo %}
@@ -28,9 +28,9 @@
                 {% endif %}
                 <li><a href="{% url "logout" %}">{% trans "logout"|title %}&#127866;</a></li>
             {% else %}
-                <li>Welcome, Drinker</li>
-                <li><a href="{% url "login" %}">{% trans "Login"|title %}</a></li>
-                <li><a href="{% url "signup" %}">{% trans "Sign Up"|title %}</a></li>
+                <li>{% trans "Welcome, Drinker"|title %}</li>
+                <li><a href="{% url "login" %}">{% trans "login"|title %}</a></li>
+                <li><a href="{% url "signup" %}">{% trans "sign up"|title %}</a></li>
             {% endif %}
         </ul>
     </header>
@@ -46,7 +46,7 @@
         {% endblock content %}
     </main>
     <footer>
-        <p>&copy; 2023 White Knight</p>
+        <p>&copy; 2023 {% trans "white knight"|title %}</p>
     </footer>
 </body>
 </html>
