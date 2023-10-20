@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse
 from django.db.models.query import QuerySet, Q
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from . import models, forms
 from .models import Beer, Type
@@ -11,6 +11,7 @@ from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import DetailView
+from django.urls import reverse_lazy
 
 
 def index(request: HttpRequest):
@@ -78,7 +79,7 @@ class BeerDetail(generic.edit.FormMixin, DetailView):
         return initial
 
     def post(self, *args, **kwargs) -> HttpResponse:
-        self.get_object = self.get_object()
+        self.object = self.get_object()
         form = self.get_form()
         if form.is_valid():
             return self.form_valid(form)
@@ -93,7 +94,7 @@ class BeerDetail(generic.edit.FormMixin, DetailView):
         return super().form_valid(form)
     
     def get_success_url(self) -> str:
-        return reverse('beer_detail', kwargs={'pk': self.get_object.pk})
+        return reverse_lazy('beer_detail', kwargs={'pk': self.get_object.pk})
     
 
     def get_object(self, queryset=None):
@@ -179,3 +180,10 @@ def order_detail(request, pk):
     for order_line in order_lines:
         order_line.total_price = order_line.qty * order_line.price
     return render(request, 'alynas/order_detail.html', {'order': order, 'order_lines': order_lines})
+
+def beer_detail(request: HttpRequest, pk: int):
+    return render(
+        request,
+        'alynas/beer_detail.html',
+        {'beer': get_object_or_404(models.Beer, pk=pk)}
+    )
