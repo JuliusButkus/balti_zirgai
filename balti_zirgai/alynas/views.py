@@ -1,18 +1,16 @@
 from typing import Any
 from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from django.db.models.query import QuerySet, Q
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic
-from . import models
+from . import models, forms
 from .models import Beer, Type
 from django.db.models import Sum
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic import DetailView
-
-
 
 
 def index(request: HttpRequest):
@@ -79,10 +77,36 @@ class BeerMeniu(generic.ListView):
         return queryset
     
 
-class BeerDetail(DetailView):
+class BeerDetail(generic.edit.FormMixin, DetailView):
     model = Beer
     template_name = "alynas/beer_detail.html"
     context_object_name = 'beer'
+    form_class = forms.BeerReviewForm
+
+    def get_initial(self) -> dict[str, Any]:
+        initial = super().get_initial()
+        initial['beer'] = self.get_object()
+        initial['reviewer'] = self.request.user
+        return initial
+
+    def post(self, *args, **kwargs) -> HttpResponse:
+        self.get_object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form) -> HttpResponse:
+        form.instance.beer = self.object
+        form.instance.reviewer = self.request.user
+        form.save()
+        messages.success(self.request, 'Review posted success')
+        return super().form_valid(form)
+    
+    def get_success_url(self) -> str:
+        return reverse('beer_detail', kwargs={'pk': self.get_object.pk})
+    
 
     def get_object(self, queryset=None):
         return Beer.objects.get(name=self.kwargs['beer_name'])

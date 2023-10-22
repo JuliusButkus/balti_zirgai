@@ -29,5 +29,26 @@
         </div>        
     </div> 
 </div> 
-<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">   
+<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">
+<h2>Reviews</h2>
+{% if user.is_authenticated %}
+<form method="post" action="{{ request.path }}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button type="submit">Post Review</button></p>
+</form>
+{% endif %}
+{% if beer.reviews.all %}
+<ul class="nice-list">
+    {% for review in beer.reviews.all %}
+        <li>
+            <h4>
+                <span>{{ review.reviewer }}</span>
+                <span class="float-right">{{ review.created_at }}</span> 
+            </h4>
+            {{ review.content }}
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock content %}
