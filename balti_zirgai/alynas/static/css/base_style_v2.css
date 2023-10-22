@@ -243,3 +243,10 @@ div.box {
 .box-debug {
     background-color: #a8a8a8;
 }
+.nice-list {
+    background-color: rgb(189, 189, 189);
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.2; 
+}
