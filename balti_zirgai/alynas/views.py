@@ -94,11 +94,7 @@ class BeerDetail(generic.edit.FormMixin, DetailView):
         return super().form_valid(form)
     
     def get_success_url(self) -> str:
-<<<<<<< HEAD
-        return reverse_lazy('beer_detail', kwargs={'pk': self.get_object.pk})
-=======
         return reverse_lazy('beer_detail', kwargs={'beer_name': self.get_object().name})
->>>>>>> 8aa81a4 (veikia review)
     
 
     def get_object(self, queryset=None):
