@@ -221,3 +221,25 @@ form.inline-form {
 .float-right {
     float: right;
 }
+
+/* error/success box'ai */
+div.box {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #999999;
+}
+.box-error {
+    background-color: #e0c0c0;
+}
+.box-success {
+    background-color: #c0e0c0;
+}
+.box-warning {
+    background-color: #e0e0c0;
+}
+.box-info {
+    background-color: #c0c0e0;
+}
+.box-debug {
+    background-color: #a8a8a8;
+}
