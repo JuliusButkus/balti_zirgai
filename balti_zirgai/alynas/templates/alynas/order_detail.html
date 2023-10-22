@@ -1,19 +1,20 @@
 {% extends "base.html" %}
-{% block title %}Order Detail{% endblock title %}
+{% load static i18n%}
+{% block title %}{% trans "Order Detail" %}{% endblock title %}
 {% block content %}
-    <h1>Order Detail - Order ID: {{ order.id }}</h1>
-    <p>Total Price: {{ order.get_total_price }}</p>
-    <p>Date: {{ order.date }}</p>
-    <p>Status: {{ order.get_status_display }}</p>
+    <h1>{% trans "Order Detail - Order ID" %}: {{ order.id }}</h1>
+    <p>{% trans "Total Price" %}: {{ order.get_total_price }}</p>
+    <p>{% trans "Date" %}: {{ order.date }}</p>
+    <p>{% trans "Status" %}: {{ order.get_status_display }}</p>
 
-    <h2>Ordered Beers:</h2>
+    <h2>{% trans "Ordered Beers" %}:</h2>
     {% if order_lines %}
         <table class="tbl_orders">
             <tr>
-                <th>Beer Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total Price</th>
+                <th>{% trans "Beer Name" %}</th>
+                <th>{% trans "Quantity" %}</th>
+                <th>{% trans "Price" %}</th>
+                <th>{% trans "Total Price" %}</th>
             </tr>
             {% for order_line in order_lines %}
                 <tr>
@@ -25,6 +26,6 @@
             {% endfor %}
         </table>
     {% else %}
-        <p>No orders have been made.</p>
+        <p>{% trans "No orders have been made" %}.</p>
     {% endif %}
 {% endblock content %}

@@ -18,10 +18,15 @@ def index(request: HttpRequest):
     request.session['num_visits'] = num_visits + 1
     total_qty = Beer.objects.aggregate(Sum('qty'))['qty__sum'] or 0
     num_types = Type.objects.count()
+    num_light_beer = len(set(Beer.objects.filter(beer_type__name='Light').values_list('name', flat=True)))
+    num_dark_beer = len(set(Beer.objects.filter(beer_type__name='Dark').values_list('name', flat=True)))
     context = {
         'num_visits': num_visits,
         'num_liters': total_qty,
-        'num_types': num_types,
+        'num_beer': num_types,
+        'num_light_beer': num_light_beer,
+        'num_dark_beer': num_dark_beer,
+
     }
 
     return render(request, 'alynas/index.html', context)

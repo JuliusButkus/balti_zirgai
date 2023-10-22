@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}"beer detail"{{ block.super }} {% endblock title %} 
+{% block title %}{% trans "beer detail"|title %}{{ block.super }} {% endblock title %} 
 {% block content %}
 <div class="container">
     <div class="background center">
@@ -17,25 +17,24 @@
                     </li>
                     <h3>{{ beer.name }} </h3>
                     <li> {{ beer.detail }}$ </li>
-                    <li> price {{ beer.price }}$ </li>
+                    <li> {% trans "price" %} {{ beer.price }}$ </li>
                     <form method="post" action="{% url 'buy_beer' beer.id %}" class="buy-form">
                         {% csrf_token %}
-                        <label for="quantity">Select Quantity:</label>
+                        <label for="quantity">{% trans "Select Quantity" %}:</label>
                         <input type="number" name="quantity" id="quantity" min="1" value="1">
-                        <button type="submit" class="buy-button">Add</button>
+                        <button type="submit" class="buy-button">{% trans "Add" %}</button>
                     </form>
                 </ul>
             </div>
         </div>        
     </div> 
 </div> 
-<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">
-<h2>Reviews</h2>
+<h2>{% trans "Reviews"|title %}</h2>
 {% if user.is_authenticated %}
 <form method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form.as_p }}
-    <p><button type="submit">Post Review</button></p>
+    <p><button type="submit">{% trans "Post Review" %}</button></p>
 </form>
 {% endif %}
 {% if beer.reviews.all %}
@@ -51,4 +50,5 @@
     {% endfor %}
 </ul>
 {% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">
 {% endblock content %}

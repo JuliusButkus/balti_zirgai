@@ -22,13 +22,12 @@
                 <p>{% trans "Last Name is not available" %}.</p>
             {% endif %}
             <p>{% trans "email"|capfirst %}: {{ user.email }}</p>
-            <p>
+            <div class="button-container">
                 <button class="update-btn">
-                    <a href="{% url "profile_update" %}" class="btn" style="color: white; text-decoration: none;">{% trans "update"|capfirst %}</a>
+                    <a href="{% url "profile_update" %}" class="btn">{% trans "update"|capfirst %}</a>
                 </button>
-            </p>
             </div>
         </div>
     </div>
-</div>   
+</div>
 {% endblock content %}

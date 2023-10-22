@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}My Orders{% endblock title %}
+{% block title %}{% trans "My Orders" %}{% endblock title %}
 {% block content %}
 <div class="container">
     <div class="background center">
         <div class="content center">
             <div class="main content">
-                <h1>My Orders</h1>
+                <h1>{% trans "My Orders" %}</h1>
                 {% if order_data %}
                     <table class="tbl_orders center">
                         <tr>
-                            <th>Order ID</th>
-                            <th>Total Price</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>View Order</th>
+                            <th>{% trans "Order ID" %}</th>
+                            <th>{% trans "Total Price" %}</th>
+                            <th>{% trans "Date" %}</th>
+                            <th>{% trans "Status" %}</th>
+                            <th>{% trans "View Order" %}</th>
                         </tr>
                         {% for data in order_data %}
                             <tr>
@@ -27,7 +27,7 @@
                         {% endfor %}
                     </table>
                 {% else %}
-                    <p>No orders found.</p>
+                    <p>{% trans "No orders found" %}.</p>
                 {% endif %}
             </div>
         </div>
