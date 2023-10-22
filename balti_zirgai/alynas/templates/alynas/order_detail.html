@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static i18n%}
 {% block title %}{% trans "Order Detail" %}{% endblock title %}
 {% block content %}
     <h1>{% trans "Order Detail - Order ID" %}: {{ order.id }}</h1>

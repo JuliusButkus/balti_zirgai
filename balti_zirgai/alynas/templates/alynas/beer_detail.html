@@ -29,13 +29,12 @@
         </div>        
     </div> 
 </div> 
-<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">
-<h2>Reviews</h2>
+<h2>{% trans "Reviews"|title %}</h2>
 {% if user.is_authenticated %}
 <form method="post" action="{{ request.path }}">
     {% csrf_token %}
     {{ form.as_p }}
-    <p><button type="submit">Post Review</button></p>
+    <p><button type="submit">{% trans "Post Review" %}</button></p>
 </form>
 {% endif %}
 {% if beer.reviews.all %}
@@ -51,4 +50,5 @@
     {% endfor %}
 </ul>
 {% endif %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/beer_detail.css' %}">
 {% endblock content %}

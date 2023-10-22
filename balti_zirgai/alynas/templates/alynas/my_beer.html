@@ -30,7 +30,7 @@
             {% else %}
                 <p>{% trans "No beers purchased yet" %}.</p>
             {% endif %}
-            <p><a href="{% url 'my_orders' %}">{% trans "My Orders" %}</a></p>
+            <p><button class="my-orders"><a href="{% url 'my_orders' %}">{% trans "My Orders" %}</a></button></p>
             </div>
         </div>
     </div>
