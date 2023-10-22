@@ -3,13 +3,14 @@
 {% block title %}{% trans "Order Detail" %}{% endblock title %}
 {% block content %}
     <h1>{% trans "Order Detail - Order ID" %}: {{ order.id }}</h1>
-    <p>{% trans "Total Price" %}: {{ order.get_total_price }}</p>
-    <p>{% trans "Date" %}: {{ order.date }}</p>
-    <p>{% trans "Status" %}: {{ order.get_status_display }}</p>
-
+    <div class="order_detail_info">
+        <p>{% trans "Total Price" %}: {{ order.get_total_price }}</p>
+        <p>{% trans "Date" %}: {{ order.date }}</p>
+        <p>{% trans "Status" %}: {{ order.get_status_display }}</p>
+    </div>    
     <h2>{% trans "Ordered Beers" %}:</h2>
     {% if order_lines %}
-        <table class="tbl_orders">
+        <table class="tbl_orders_detail">
             <tr>
                 <th>{% trans "Beer Name" %}</th>
                 <th>{% trans "Quantity" %}</th>
