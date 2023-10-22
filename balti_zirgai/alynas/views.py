@@ -19,25 +19,42 @@ def index(request: HttpRequest):
     request.session['num_visits'] = num_visits + 1
     total_qty = Beer.objects.aggregate(Sum('qty'))['qty__sum'] or 0
     num_types = Type.objects.count()
+    num_light_beer = len(set(Beer.objects.filter(beer_type__name='Light').values_list('name', flat=True)))
+    num_dark_beer = len(set(Beer.objects.filter(beer_type__name='Dark').values_list('name', flat=True)))
     context = {
         'num_visits': num_visits,
         'num_liters': total_qty,
-        'num_types': num_types,
+        'num_beer': num_types,
+        'num_light_beer': num_light_beer,
+        'num_dark_beer': num_dark_beer,
+
     }
 
     return render(request, 'alynas/index.html', context)
 
-def light_beer(request: HttpRequest):
+class LightBeer(generic.ListView):
+    model = models.Beer
+    template_name = "alynas/light_beer.html"
+    context_object_name = 'light_beer'
     light_beer_type = models.Type.objects.get(name="Light")
     beers = models.Beer.objects.filter(beer_type=light_beer_type)
     paginate_by = 5
-    paginator = Paginator(beers, paginate_by)
-    page = request.GET.get('page')
-    try:
-        beers = paginator.get_page(page)
-    except EmptyPage:
-        beers = paginator.get_page(1)
-    return render(request, 'alynas/light_beer.html', {'beers': beers},)
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context =  super().get_context_data(**kwargs)
+        context["search"] = True
+        return context
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset =  super().get_queryset()
+        query = self.request.GET.get("query")
+        if query:
+            queryset = queryset.filter(
+                Q(name__icontains=query) |
+                Q(name__istartswith=query)
+                )
+        return queryset
+   
 
 def dark_beer(request: HttpRequest):
     dark_beer_type = models.Type.objects.get(name="Dark")

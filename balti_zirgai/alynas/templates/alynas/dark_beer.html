@@ -1,29 +1,29 @@
 {% extends "base.html" %}
 {% load static i18n %}
-{% block title %}Dark beers in {{ block.super }}{% endblock title %}
+{% block title %}{% trans "Dark beers in" %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>Dark Beers</h1>
+<h1>{% trans "Dark Beers" %}</h1>
 <div class="container">
-    <div style="float:left; width: 50%">
-        <h4>Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer.</h4>
+    <div class="beer" style="float:left; width: 70%">
+        <h4>{% trans "Dark beers undergo a distinct brewing process where roasted malts play a central role. These malts are kilned longer to achieve their deep, rich color and complex flavor profile, often featuring notes of coffee, chocolate, and caramel. The use of dark malts adds a unique depth to the beer, and the hop bitterness is usually subdued, allowing the malt character to shine. This results in a dark, sometimes nearly opaque beer with a moderate to high alcohol by volume, offering a full-bodied and often warming experience that appeals to those who appreciate a more robust and flavorful beer" %}.</h4>
         <div class="pager">
             {% if page_obj.has_previous %}
-            <a href="?page=1">First</a>
+            <a href="?page=1">{% trans "First" %}</a>
                 {% if page_obj.previous_page_number != 1 %}
-                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                <a href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
                 {% endif %}
             {% endif %}
             <span class="current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }} </span>
             {% if page_obj.has_next %}
                 {% if page_obj.next_page_number != page_obj.paginator.num_pages %}
-                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a>
                 {% endif %}
-            <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "Last" %}</a>
             {% endif %}
         </div>
-            <div class="beer">
-            <table class="beers";>
-                <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
+            <div>
+            <table class="beers">
+                <tr><th>{% trans "Name" %}</th><th>{% trans "Available Liters" %}</th><th>{% trans "Price" %} $</th></tr>
                 {% for beer in beers %}
                     <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
                 {% endfor %}

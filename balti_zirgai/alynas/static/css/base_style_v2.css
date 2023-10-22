@@ -85,6 +85,26 @@ div.form-background {
     height: 90vh;
     width: 100%
 }
+div.form-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    min-height: 90vh;
+    width: 150%;
+    box-sizing: border-box;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+div.form-main-content {
+    flex: 1;
+    text-align: center;
+    margin-top: 9rem;
+    padding-top: 10rem;
+    padding: 3.5rem;
+    box-sizing: border-box;
+}
 
 h1 {
     text-align: center;
@@ -221,7 +241,6 @@ form.inline-form {
 .float-right {
     float: right;
 }
-
 /* error/success box'ai */
 div.box {
     margin: 0.5rem;
@@ -249,4 +268,123 @@ div.box {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.2; 
+=======
+/* Add beer */
+.buy-form {
+    margin-top: 50px;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #7f5f1a;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 100px;
+}
+.buy-button {
+    background-color: #7f5f1a;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* review */
+.review-section {
+    margin-top: 50px;
+}
+h2 {
+    font-size: 28px;
+    color: #7f5f1a;
+    border-bottom: 2px solid #7f5f1a;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+form {
+    margin-bottom: 30px;
+}
+form p {
+    text-align: center;
+}
+button[type="submit"] {
+    background-color: #7f5f1a;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.nice-list {
+    list-style: none;
+    padding: 0;
+}
+.nice-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #7f5f1a;
+    border-radius: 5px;
+}
+.nice-list h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.float-right {
+    float: right;
+}
+
+/*Profile */
+.default-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+.update-btn {
+    background-color: #7f5f1a;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.update-btn a {
+    color: white;
+    text-decoration: none;
+}
+/* My Orders button */
+.my-orders {
+    background-color: #7f5f1a;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.my-orders a {
+    color: white;
+    text-decoration: none;
 }

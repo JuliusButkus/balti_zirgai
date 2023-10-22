@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-20 08:02+0000\n"
+"POT-Creation-Date: 2023-10-22 13:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,11 +28,11 @@ msgstr "tipas"
 msgid "types"
 msgstr "tipai"
 
-#: alynas/models.py:33 alynas/templates/alynas/beer_meniu.html:46
+#: alynas/models.py:33 alynas/templates/alynas/beer_meniu.html:43
 msgid "beer type"
 msgstr "alaus tipas"
 
-#: alynas/models.py:40
+#: alynas/models.py:40 alynas/models.py:53
 msgid "beer"
 msgstr "alus"
 
@@ -40,140 +40,164 @@ msgstr "alus"
 msgid "beers"
 msgstr "alus"
 
-#: alynas/models.py:51
+#: alynas/models.py:59
+msgid "reviewer"
+msgstr "apžvalgininkas"
+
+#: alynas/models.py:63
+msgid "Content"
+msgstr "Turinys"
+
+#: alynas/models.py:65
+msgid "created at"
+msgstr "sukurtas"
+
+#: alynas/models.py:71
+msgid "beer review"
+msgstr "alaus apžvalga"
+
+#: alynas/models.py:72
+msgid "beer reviews"
+msgstr "alaus apžvalgos"
+
+#: alynas/models.py:84
 msgid "pending"
 msgstr "laukiama"
 
-#: alynas/models.py:52
+#: alynas/models.py:85
 msgid "in progres"
 msgstr "vykdomas"
 
-#: alynas/models.py:53
+#: alynas/models.py:86
 msgid "completed"
 msgstr "įvykdytas"
 
-#: alynas/models.py:54
+#: alynas/models.py:87
 msgid "canceled"
 msgstr "atšauktas"
 
-#: alynas/models.py:59 alynas/templates/alynas/my_orders.html:10
-#: alynas/templates/alynas/order_detail.html:6
+#: alynas/models.py:92
 msgid "date"
 msgstr "data"
 
-#: alynas/models.py:61
+#: alynas/models.py:94
 msgid "drinker"
 msgstr "gerėjas"
 
-#: alynas/models.py:65 alynas/models.py:89
-#: alynas/templates/alynas/my_orders.html:11
-#: alynas/templates/alynas/order_detail.html:7
+#: alynas/models.py:98 alynas/models.py:122
 msgid "status"
 msgstr "statusas"
 
-#: alynas/models.py:69 alynas/models.py:96
+#: alynas/models.py:102 alynas/models.py:129
 msgid "order"
 msgstr "užsakymas"
 
-#: alynas/models.py:70
+#: alynas/models.py:103
 msgid "orders"
 msgstr "užsakymai"
 
-#: alynas/models.py:91
+#: alynas/models.py:124
 msgid "ordered beer"
 msgstr "užsakytas alus"
 
-#: alynas/models.py:102
+#: alynas/models.py:135
 msgid "orderline"
 msgstr "užsakymo eilutė"
 
-#: alynas/models.py:103
+#: alynas/models.py:136
 msgid "orderlines"
 msgstr "užsakymo eilutės"
 
-#: alynas/templates/alynas/beer_detail.html:5
+#: alynas/templates/alynas/beer_detail.html:3
+msgid "beer detail"
+msgstr "alaus informacija"
+
+#: alynas/templates/alynas/beer_detail.html:9
 msgid "beer describtion"
 msgstr "alaus aprašymas"
 
-#: alynas/templates/alynas/beer_detail.html:21
-msgid "Select Quantity:"
-msgstr "Pasirinkite kiekį"
+#: alynas/templates/alynas/beer_detail.html:20
+#: alynas/templates/alynas/beer_meniu.html:41
+msgid "price"
+msgstr "kaina"
 
 #: alynas/templates/alynas/beer_detail.html:23
+msgid "Select Quantity"
+msgstr "Pasirinkite kiekį"
+
+#: alynas/templates/alynas/beer_detail.html:25
 msgid "Add"
 msgstr "Pridėti"
 
+#: alynas/templates/alynas/beer_detail.html:32
+msgid "Reviews"
+msgstr "Atsiliepimas"
+
+#: alynas/templates/alynas/beer_detail.html:37
+msgid "Post Review"
+msgstr "Patalpinti Atsiliepimą"
+
 #: alynas/templates/alynas/beer_meniu.html:3
-msgid "beer available in white knight bar"
+msgid "beer available in White Knight bar"
 msgstr "balti žirgai bare galima įsigyti"
 
-#: alynas/templates/alynas/beer_meniu.html:19
-#: alynas/templates/alynas/dark_beer.html:25
-#: alynas/templates/alynas/light_beer.html:22
+#: alynas/templates/alynas/beer_meniu.html:16
+#: alynas/templates/alynas/dark_beer.html:11
+#: alynas/templates/alynas/light_beer.html:11
 #: alynas/templates/inc/pager_prev_next.html:3
-msgid "first"
-msgstr "pirmas"
+msgid "First"
+msgstr "Pirmas"
 
-#: alynas/templates/alynas/beer_meniu.html:21
-#: alynas/templates/alynas/dark_beer.html:27
-#: alynas/templates/alynas/light_beer.html:24
+#: alynas/templates/alynas/beer_meniu.html:18
+#: alynas/templates/alynas/dark_beer.html:13
+#: alynas/templates/alynas/light_beer.html:13
 #: alynas/templates/inc/pager_prev_next.html:5
-msgid "previous"
-msgstr "ankstesnis"
+msgid "Previous"
+msgstr "Ankstesnis"
 
-#: alynas/templates/alynas/beer_meniu.html:27
-#: alynas/templates/alynas/dark_beer.html:33
-#: alynas/templates/alynas/light_beer.html:30
+#: alynas/templates/alynas/beer_meniu.html:24
+#: alynas/templates/alynas/dark_beer.html:19
+#: alynas/templates/alynas/light_beer.html:19
 #: alynas/templates/inc/pager_prev_next.html:11
-msgid "next"
-msgstr "sekantis"
+msgid "Next"
+msgstr "Sekantis"
 
-#: alynas/templates/alynas/beer_meniu.html:29
-#: alynas/templates/alynas/dark_beer.html:35
-#: alynas/templates/alynas/light_beer.html:32
+#: alynas/templates/alynas/beer_meniu.html:26
+#: alynas/templates/alynas/dark_beer.html:21
+#: alynas/templates/alynas/light_beer.html:21
 #: alynas/templates/inc/pager_prev_next.html:13
-msgid "last"
-msgstr "paskutinis"
+msgid "Last"
+msgstr "Paskutinis"
 
-#: alynas/templates/alynas/beer_meniu.html:33
-msgid "search beer..."
+#: alynas/templates/alynas/beer_meniu.html:30
+#: alynas/templates/inc/pager_prev_next.html:17
+msgid "search beer"
 msgstr "ieškoti alaus..."
 
-#: alynas/templates/alynas/beer_meniu.html:35
+#: alynas/templates/alynas/beer_meniu.html:32
 #: alynas/templates/inc/pager_prev_next.html:19
 msgid "reset"
 msgstr "atstatyti"
 
-#: alynas/templates/alynas/beer_meniu.html:43
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
+#: alynas/templates/alynas/beer_meniu.html:40
 msgid "name"
 msgstr "pavadinimas"
 
-#: alynas/templates/alynas/beer_meniu.html:44
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
-#: alynas/templates/alynas/order_detail.html:15
-msgid "price"
-msgstr "kaina"
-
-#: alynas/templates/alynas/beer_meniu.html:45
-#: alynas/templates/alynas/dark_beer.html:11
-#: alynas/templates/alynas/light_beer.html:10
+#: alynas/templates/alynas/beer_meniu.html:42
 msgid "available liters"
 msgstr "likutis litrais"
 
-#: alynas/templates/alynas/beer_meniu.html:58
+#: alynas/templates/alynas/beer_meniu.html:55
 msgid "no beer available"
 msgstr "alaus nėra"
 
 #: alynas/templates/alynas/dark_beer.html:3
-msgid "dark beers in"
-msgstr "tamsus alus"
+msgid "Dark beers in"
+msgstr "Tamsus Alus"
 
 #: alynas/templates/alynas/dark_beer.html:5
-msgid "dark beers"
-msgstr "tamsus alus"
+msgid "Dark Beers"
+msgstr "Tamsus Alus"
 
 #: alynas/templates/alynas/dark_beer.html:8
 msgid ""
@@ -185,7 +209,7 @@ msgid ""
 "to shine. This results in a dark, sometimes nearly opaque beer with a "
 "moderate to high alcohol by volume, offering a full-bodied and often warming "
 "experience that appeals to those who appreciate a more robust and flavorful "
-"beer."
+"beer"
 msgstr ""
 "Tamsus alus turi išskirtinį virimo procesą, kuriame svarbų vaidmenį atlieka "
 "skrudinti salyklo grūdai.Šie salyklo grūdai yra ilgiau džiovinami, siekiant "
@@ -197,52 +221,80 @@ msgstr ""
 "ir dažniausiai šildantį patyrimą, kuris patinka tiems, kurie vertina "
 "stipresnį ir skanesnį alų."
 
+#: alynas/templates/alynas/dark_beer.html:26
+#: alynas/templates/alynas/light_beer.html:26
+msgid "Name"
+msgstr "Pavadinimas"
+
+#: alynas/templates/alynas/dark_beer.html:26
+#: alynas/templates/alynas/light_beer.html:26
+msgid "Available Liters"
+msgstr "Likutis Litrais"
+
+#: alynas/templates/alynas/dark_beer.html:26
+#: alynas/templates/alynas/light_beer.html:26
+#: alynas/templates/alynas/order_detail.html:16
+msgid "Price"
+msgstr "Kaina"
+
 #: alynas/templates/alynas/index.html:3
 msgid "welcome to"
 msgstr "sveiki atvykę į"
 
 #: alynas/templates/alynas/index.html:14
-msgid "white knight brewery - beer page"
+msgid "Balti Žirgai Brewery - Beer Page"
 msgstr "baras balti zirgai - alaus puslapis"
 
 #: alynas/templates/alynas/index.html:15
 msgid ""
-"Welcome to White Knight Brewery - page dedicated to beer, spreading taste "
-"like a fairy tale and captivating like a painting."
+"Welcome to Balti Žirgai Brewery - page dedicated to beer, spreading taste "
+"like a fairy tale and captivating like a painting"
 msgstr ""
-"Sveiki atvyke į Balti Žirgai alaus darykla - puslapį, skirtą alui, "
-"skleidžiančiam skonį."
+"Sveiki atvyke į Balti Žirgai alaus darykla - puslapį, skirtą alui, kuris "
+"skleidžia skonį kaip pasaką ir žavi kaip tapybą."
 
 #: alynas/templates/alynas/index.html:16
 msgid ""
 "Here, amid the notes of flavor and traces of aroma, we embark on a beer "
 "journey crafted not only by the green fields but also by every golden drop "
-"sliding in the glass."
+"sliding in the glass"
 msgstr ""
+"Čia, tarp skonio natos ir aromato pėdsakų, mes įžengiame į alaus kelionę,"
+"kurią kuria ne tik žalios pievos, bet ir kiekvienas aukso lašas "
+"sklendžiantis taurėje."
 
 #: alynas/templates/alynas/index.html:17
 msgid ""
 "Explore a world where beer is not just a taste but also tells a story. Balti "
 "Žirgai Brewery invites you to discover the mysterious world of various beer "
-"styles, where different aromas and flavors create a unique beer landscape."
+"styles, where different aromas and flavors create a unique beer landscape"
 msgstr ""
+"Tyrinėkite pasaulį, kuriame alus nėra tik skonis, bet ir pasakoja istoriją."
+"Balti Žirgai alaus darykla kviečia jus atrasti įvairių alaus stilių "
+"paslaptingą pasaulį,kur skirtingi aromatai ir skoniai sukuria unikalų alaus "
+"kraštovaizdį."
 
 #: alynas/templates/alynas/index.html:18
 msgid ""
 "Join us on our journey where brewing masters and beer artisans travel "
 "through paths of tradition and innovation, and you can be part of this "
-"flavorful adventure."
+"flavorful adventure"
 msgstr ""
+"Prisijunkite prie mūsų kelionės,kur aludarystės meistrai ir alaus menininkai "
+"keliauja per tradicijų ir inovacijų takus,o jūs galite tapti šio skonio "
+"nuotykio dalimi."
 
 #: alynas/templates/alynas/index.html:19
 msgid ""
 "Welcome to Balti Žirgai Brewery - page, where the beer feast becomes not "
-"only a taste delight but also a cultural experience."
+"only a taste delight but also a cultural experience"
 msgstr ""
+"Sveiki atvykę į Balti Žirgai aludarį - puslapį, kur alaus šventė tampa ne "
+"tik skonio malonumu,bet ir kultūrine patirtimi."
 
 #: alynas/templates/alynas/index.html:20
 msgid "Currently in our White Knight we have"
-msgstr "šiuo metu Baltuose žirguose turime"
+msgstr "Šiuo metu Baltuose Žirguose turime"
 
 #: alynas/templates/alynas/index.html:22
 msgid "total quantity in liters"
@@ -253,18 +305,24 @@ msgid "different taste of beer"
 msgstr "skirtingų alaus rūšių"
 
 #: alynas/templates/alynas/index.html:24
+msgid "different types of light beer"
+msgstr "skirtingų šviesaus alaus rūšių"
+
+#: alynas/templates/alynas/index.html:25
+msgid "different types of dark beer"
+msgstr "skirtingų tamsaus alaus rūšių"
+
+#: alynas/templates/alynas/index.html:26
 msgid "your visits"
 msgstr "Jūsų apsilankymai"
 
 #: alynas/templates/alynas/light_beer.html:3
 msgid "Light beers in"
-msgstr ""
+msgstr "Šviesusis alus"
 
 #: alynas/templates/alynas/light_beer.html:5
-#, fuzzy
-#| msgid "beers"
 msgid "Light beers"
-msgstr "alus"
+msgstr "Šviesusis alus"
 
 #: alynas/templates/alynas/light_beer.html:8
 msgid ""
@@ -273,119 +331,142 @@ msgid ""
 "of pale malts and extended fermentation to achieve a crisp, refreshing "
 "taste. The result is a pale, clear beer with a subtle malt sweetness and a "
 "lower alcohol by volume, making it a perfect choice for those seeking a "
-"lighter, easy-drinking option, especially on warm days."
+"lighter, easy-drinking option, especially on warm days"
 msgstr ""
+"Šviesus alus yra ruošiamas atsargiai planuotu procesu, siekiant sumažinti jo "
+"spalvą ir kalorijų kiekį.Tai paprastai apima didesnį baltųjų miežių kiekį ir "
+"ilgesnį fermentacijos procesą,kad būtų pasiektas gaivus skonis. Rezultatas "
+"yra šviesus,skaidrus alus su subtiliu miežinio saldumo skoniu ir mažesniu "
+"alkoholio kiekiu pagal tūrį,todėl jis yra puikus pasirinkimas tiems, kurie "
+"ieško lengvo, lengvai geriamo alaus, ypač šiltomis dienomis."
 
-#: alynas/templates/alynas/my_beer.html:2 alynas/templates/base.html:17
-#, fuzzy
-#| msgid "beer"
-msgid "my beer"
-msgstr "alus"
-
-#: alynas/templates/alynas/my_beer.html:4
-#, fuzzy
-#| msgid "ordered beer"
-msgid "my ordered beers"
-msgstr "užsakytas alus"
-
-#: alynas/templates/alynas/my_beer.html:8
-#: alynas/templates/alynas/order_detail.html:13
-#, fuzzy
-#| msgid "beer meniu"
-msgid "beer name"
-msgstr "alaus meniu"
+#: alynas/templates/alynas/my_beer.html:3 alynas/templates/base.html:19
+msgid "My Beer"
+msgstr "Mano Alus"
 
 #: alynas/templates/alynas/my_beer.html:9
+msgid "My Ordered Beers"
+msgstr "Užsakytas Alus"
+
+#: alynas/templates/alynas/my_beer.html:13
 #: alynas/templates/alynas/order_detail.html:14
-msgid "quantity"
-msgstr "kiekis"
+msgid "Beer Name"
+msgstr "Alaus pavadinimas"
 
-#: alynas/templates/alynas/my_beer.html:10
-#: alynas/templates/alynas/my_orders.html:9
-#: alynas/templates/alynas/order_detail.html:5
-#: alynas/templates/alynas/order_detail.html:16
-msgid "total price"
-msgstr "iš viso"
+#: alynas/templates/alynas/my_beer.html:14
+#: alynas/templates/alynas/order_detail.html:15
+msgid "Quantity"
+msgstr "Kiekis"
 
-#: alynas/templates/alynas/my_beer.html:20
-msgid "total price for all beers"
-msgstr "bendra užsakymo suma"
+#: alynas/templates/alynas/my_beer.html:15
+#: alynas/templates/alynas/my_orders.html:14
+#: alynas/templates/alynas/order_detail.html:6
+#: alynas/templates/alynas/order_detail.html:17
+msgid "Total Price"
+msgstr "Iš Viso"
 
-#: alynas/templates/alynas/my_beer.html:23
-msgid "buy all"
-msgstr "pirkti"
+#: alynas/templates/alynas/my_beer.html:25
+msgid "Total Price:"
+msgstr "Iš Viso"
 
-#: alynas/templates/alynas/my_beer.html:26
+#: alynas/templates/alynas/my_beer.html:28
+msgid "Buy"
+msgstr "Pirkti"
+
+#: alynas/templates/alynas/my_beer.html:31
 msgid "No beers purchased yet"
 msgstr "Alaus užsakymų nėra"
 
-#: alynas/templates/alynas/my_beer.html:28
-#: alynas/templates/alynas/my_orders.html:2
-#: alynas/templates/alynas/my_orders.html:4
-msgid "my orders"
-msgstr "užsakymai"
+#: alynas/templates/alynas/my_beer.html:33
+#: alynas/templates/alynas/my_orders.html:3
+#: alynas/templates/alynas/my_orders.html:9
+msgid "My Orders"
+msgstr "Mano Užsakymai"
 
-#: alynas/templates/alynas/my_orders.html:8
+#: alynas/templates/alynas/my_orders.html:13
 msgid "Order ID"
-msgstr "užsakymas"
+msgstr "Užsakymas"
 
-#: alynas/templates/alynas/my_orders.html:12
-msgid "view order"
-msgstr "peržiūrėti užsakymą"
+#: alynas/templates/alynas/my_orders.html:15
+#: alynas/templates/alynas/order_detail.html:7
+msgid "Date"
+msgstr "Data"
 
-#: alynas/templates/alynas/my_orders.html:25
+#: alynas/templates/alynas/my_orders.html:16
+#: alynas/templates/alynas/order_detail.html:8
+msgid "Status"
+msgstr "Statusas"
+
+#: alynas/templates/alynas/my_orders.html:17
+msgid "View Order"
+msgstr "Peržiūrėti Užsakymą"
+
+#: alynas/templates/alynas/my_orders.html:30
 msgid "No orders found"
 msgstr "Užsakymų nerasta"
 
-#: alynas/templates/alynas/order_detail.html:2
-msgid "order detail"
-msgstr "užsakymo informacija"
+#: alynas/templates/alynas/order_detail.html:3
+msgid "Order Detail"
+msgstr "Užsakymo Informacija"
 
-#: alynas/templates/alynas/order_detail.html:4
+#: alynas/templates/alynas/order_detail.html:5
 msgid "Order Detail - Order ID"
 msgstr "Išsami užsakymo informacija"
 
-#: alynas/templates/alynas/order_detail.html:9
-#, fuzzy
-#| msgid "ordered beers"
+#: alynas/templates/alynas/order_detail.html:10
 msgid "Ordered Beers"
-msgstr "užsakytas alus"
+msgstr "Užsakytas Alus"
 
-#: alynas/templates/alynas/order_detail.html:28
+#: alynas/templates/alynas/order_detail.html:29
 msgid "No orders have been made"
 msgstr "Užsakymų nėra"
 
-#: alynas/templates/base.html:7 alynas/templates/base.html:14
-#: alynas/templates/base.html:49
-msgid "white knight"
-msgstr "Balti žirgai"
+#: alynas/templates/base.html:9
+msgid "balti žirgai"
+msgstr "balti žirgai"
 
-#: alynas/templates/base.html:15
+#: alynas/templates/base.html:16 alynas/templates/base.html:63
+msgid "White Knight"
+msgstr "Balti Žirgai"
+
+#: alynas/templates/base.html:17
 msgid "beer meniu"
 msgstr "alaus meniu"
 
-#: alynas/templates/base.html:27
+#: alynas/templates/base.html:29
 msgid "admin"
 msgstr "administratorius"
 
-#: alynas/templates/base.html:29
+#: alynas/templates/base.html:31
 msgid "logout"
 msgstr "atsijungti"
 
-#: alynas/templates/base.html:31
-msgid "Welcome, Drinker"
-msgstr "Sveiki, Degustatoriau"
-
-#: alynas/templates/base.html:32
-msgid "login"
-msgstr "prisijungti"
-
 #: alynas/templates/base.html:33
-msgid "sign up"
-msgstr "registruotis"
+msgid "Welcome, Drinker"
+msgstr "Sveikas, Degustatoriau"
 
-#~ msgid "balti žirgai"
-#~ msgstr "balti žirgai"
+#: alynas/templates/base.html:34
+msgid "Login"
+msgstr "Prisijungti"
 
-#~ msgid "My Beer"
+#: alynas/templates/base.html:35
+msgid "Sign Up"
+msgstr "Registruotis"
+
+#~ msgid "next"
+#~ msgstr "sekantis"
+
+#~ msgid "last"
+#~ msgstr "paskutinis"
+
+#~ msgid "my beer"
 #~ msgstr "Mano Alus"
+
+#~ msgid "my ordered beers"
+#~ msgstr "užsakytas alus"
+
+#~ msgid "total price for all beers"
+#~ msgstr "bendra užsakymo suma"
+
+#~ msgid "buy all"
+#~ msgstr "pirkti"
