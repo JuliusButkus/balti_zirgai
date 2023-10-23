@@ -55,6 +55,7 @@ class LightBeer(generic.ListView):
                 )
         return queryset
    
+
 class DarkBeer(generic.ListView):
     model = models.Beer
     template_name = "alynas/dark_beer.html"

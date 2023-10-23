@@ -5,6 +5,7 @@
 <div class="form-container">
     <div class="form-background">
         <div class="form-content">
+            <div class="form-main-content center">
             <h1>{{ user }} {% trans "profile" %}</h1>
             {% if user.profile.photo %}
                 <img class="profile-photo" src="{{ user.profile.photo.url }}">
@@ -26,6 +27,7 @@
                 <button class="update-btn">
                     <a href="{% url "profile_update" %}" class="btn">{% trans "update"|capfirst %}</a>
                 </button>
+            </div >
             </div>
         </div>
     </div>
