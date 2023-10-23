@@ -329,10 +329,6 @@ button[type="submit"] {
     cursor: pointer;
     border-radius: 5px;
 }
-.nice-list {
-    list-style: none;
-    padding: 0;
-}
 .nice-list li {
     margin-bottom: 20px;
     padding: 15px;
@@ -387,4 +383,40 @@ button[type="submit"] {
 .my-orders a {
     color: white;
     text-decoration: none;
+}
+h1, h2 {
+    color: #b87333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+/* oders_detail */
+.order_detail_info {
+    color: #b87333;
+}
+
+.tbl_orders_detail {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tbl_orders_detail th, .tbl_orders_detail td {
+    border: 1px solid #b87333;
+    padding: 12px;
+}
+
+.tbl_orders_detail th {
+    background-color: #eedbb3;
+}
+.tbl_orders_detail {
+    background-color: #f3f3f3;
+}
+
+.tbl_orders_detail tr:hover {
+    background-color: #e6e1d4;
 }
