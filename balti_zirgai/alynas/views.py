@@ -55,11 +55,29 @@ class LightBeer(generic.ListView):
                 )
         return queryset
    
-
-def dark_beer(request: HttpRequest):
+class DarkBeer(generic.ListView):
+    model = models.Beer
+    template_name = "alynas/dark_beer.html"
+    context_object_name = 'dark_beer'
     dark_beer_type = models.Type.objects.get(name="Dark")
     beers = models.Beer.objects.filter(beer_type=dark_beer_type)
-    return render(request, 'alynas/dark_beer.html', {'beers': beers})
+    paginate_by = 5
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context =  super().get_context_data(**kwargs)
+        context["search"] = True
+        return context
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset =  super().get_queryset()
+        query = self.request.GET.get("query")
+        if query:
+            queryset = queryset.filter(
+                Q(name__icontains=query) |
+                Q(name__istartswith=query)
+                )
+        return queryset
+
 
 class BeerMeniu(generic.ListView):
     model = models.Beer
