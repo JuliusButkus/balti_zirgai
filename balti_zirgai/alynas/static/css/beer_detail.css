@@ -35,3 +35,7 @@
     padding: 3.5rem;
     box-sizing: border-box;
 }
+.regular-cover {
+    max-height: 100px;
+    height: 100px;
+}
