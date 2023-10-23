@@ -60,8 +60,8 @@ class DarkBeer(generic.ListView):
     model = models.Beer
     template_name = "alynas/dark_beer.html"
     context_object_name = 'dark_beer'
-    light_beer_type = models.Type.objects.get(name="dark")
-    beers = models.Beer.objects.filter(beer_type=light_beer_type)
+    dark_beer_type = models.Type.objects.get(name="Dark")
+    beers = models.Beer.objects.filter(beer_type=dark_beer_type)
     paginate_by = 5
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
@@ -78,6 +78,7 @@ class DarkBeer(generic.ListView):
                 Q(name__istartswith=query)
                 )
         return queryset
+
 
 class BeerMeniu(generic.ListView):
     model = models.Beer

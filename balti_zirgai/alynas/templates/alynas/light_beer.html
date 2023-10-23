@@ -2,10 +2,10 @@
 {% load static i18n %}
 {% block title %}{% trans "Light beers in" %} {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{% trans "Light beers" %}</h1>
 <div class="container">
-    <div class="beer" style="float:left; width: 70%">
-        <h4>{% trans "Light beers are brewed using a meticulous process designed to reduce both color and caloric content. This typically involves using a larger percentage of pale malts and extended fermentation to achieve a crisp, refreshing taste. The result is a pale, clear beer with a subtle malt sweetness and a lower alcohol by volume, making it a perfect choice for those seeking a lighter, easy-drinking option, especially on warm days" %}.</h3>
+    <div class="beer" style="float:left;">
+        <h4>Light beers</h4>
+        <h4>Light beers are brewed using a meticulous process designed to reduce both color and caloric content. This typically involves using a larger percentage of pale malts and extended fermentation to achieve a crisp, refreshing taste. The result is a pale, clear beer with a subtle malt sweetness and a lower alcohol by volume, making it a perfect choice for those seeking a lighter, easy-drinking option, especially on warm days.</h3>
         <div class="pager">
             {% if page_obj.has_previous %}
                 <a href="?page=1">{% trans "First" %}</a>
@@ -23,9 +23,11 @@
         </div>
         <div>   
             <table class="beers">
-                <tr><th>{% trans "Name" %}</th><th>{% trans "Available Liters" %}</th><th>{% trans "Price" %} $</th></tr>
-                {% for beer in beers %}
-                    <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
+                <tr><th>Name</th><th>Available Liters</th><th>Price $</th></tr>
+                {% for beer in light_beer %}
+                    {% if beer.beer_type.name == 'Light' %}
+                        <tr><td><a href="{% url 'beer_detail' beer.name %}">{{ beer.name }}</a></td><td>{{ beer.qty }}</td><td>{{ beer.price }}</td></tr>
+                    {% endif %}
                 {% endfor %}
             </table>
         </div>
